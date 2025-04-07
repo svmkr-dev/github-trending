@@ -1,0 +1,8 @@
+////  SampleCode.xcconfig
+//  GithubTrending
+//
+//  Created on 07.04.2025.
+//  
+//
+SAMPLE_CODE_DISAMBIGUATOR=${DEVELOPMENT_TEAM}
+

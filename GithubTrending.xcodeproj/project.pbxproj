@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B702DA4344A0072EF41 /* Assets.xcassets */; };
+		F2E48B752DA4344A0072EF41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* ContentView.swift */; };
+		F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */; };
+		F2E48B792DA434550072EF41 /* GithubTrendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* GithubTrendingTests.swift */; };
+		F2E48B7D2DA434570072EF41 /* GithubTrendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */; };
+		F2E48B7E2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F2E48B522DA3E6A20072EF41 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -28,25 +37,13 @@
 		F2E48B512DA3E6A20072EF41 /* GithubTrendingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B5B2DA3E6A20072EF41 /* GithubTrendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B6F2DA3E9C80072EF41 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
+		F2E48B702DA4344A0072EF41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2E48B712DA4344A0072EF41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingApp.swift; sourceTree = "<group>"; };
+		F2E48B772DA434550072EF41 /* GithubTrendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingTests.swift; sourceTree = "<group>"; };
+		F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingUITests.swift; sourceTree = "<group>"; };
+		F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F2E48B462DA3E6A10072EF41 /* GithubTrending */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GithubTrending;
-			sourceTree = "<group>";
-		};
-		F2E48B542DA3E6A20072EF41 /* GithubTrendingTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GithubTrendingTests;
-			sourceTree = "<group>";
-		};
-		F2E48B5E2DA3E6A20072EF41 /* GithubTrendingUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GithubTrendingUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F2E48B412DA3E6A10072EF41 /* Frameworks */ = {
@@ -77,9 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				F2E48B6E2DA3E9BF0072EF41 /* Configuration */,
-				F2E48B462DA3E6A10072EF41 /* GithubTrending */,
-				F2E48B542DA3E6A20072EF41 /* GithubTrendingTests */,
-				F2E48B5E2DA3E6A20072EF41 /* GithubTrendingUITests */,
+				F2E48B732DA4344A0072EF41 /* GithubTrending */,
+				F2E48B782DA434550072EF41 /* GithubTrendingTests */,
+				F2E48B7C2DA434570072EF41 /* GithubTrendingUITests */,
 				F2E48B452DA3E6A10072EF41 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +99,33 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		F2E48B732DA4344A0072EF41 /* GithubTrending */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B702DA4344A0072EF41 /* Assets.xcassets */,
+				F2E48B712DA4344A0072EF41 /* ContentView.swift */,
+				F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */,
+			);
+			path = GithubTrending;
+			sourceTree = "<group>";
+		};
+		F2E48B782DA434550072EF41 /* GithubTrendingTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B772DA434550072EF41 /* GithubTrendingTests.swift */,
+			);
+			path = GithubTrendingTests;
+			sourceTree = "<group>";
+		};
+		F2E48B7C2DA434570072EF41 /* GithubTrendingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */,
+				F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */,
+			);
+			path = GithubTrendingUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +140,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F2E48B462DA3E6A10072EF41 /* GithubTrending */,
 			);
 			name = GithubTrending;
 			packageProductDependencies = (
@@ -140,9 +161,6 @@
 			dependencies = (
 				F2E48B532DA3E6A20072EF41 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				F2E48B542DA3E6A20072EF41 /* GithubTrendingTests */,
-			);
 			name = GithubTrendingTests;
 			packageProductDependencies = (
 			);
@@ -162,9 +180,6 @@
 			);
 			dependencies = (
 				F2E48B5D2DA3E6A20072EF41 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				F2E48B5E2DA3E6A20072EF41 /* GithubTrendingUITests */,
 			);
 			name = GithubTrendingUITests;
 			packageProductDependencies = (
@@ -222,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B752DA4344A0072EF41 /* ContentView.swift in Sources */,
+				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B792DA434550072EF41 /* GithubTrendingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B7D2DA434570072EF41 /* GithubTrendingUITests.swift in Sources */,
+				F2E48B7E2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

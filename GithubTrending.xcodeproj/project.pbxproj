@@ -10,9 +10,14 @@
 		F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B702DA4344A0072EF41 /* Assets.xcassets */; };
 		F2E48B752DA4344A0072EF41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* ContentView.swift */; };
 		F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */; };
-		F2E48B792DA434550072EF41 /* GithubTrendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* GithubTrendingTests.swift */; };
+		F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */; };
 		F2E48B7D2DA434570072EF41 /* GithubTrendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */; };
 		F2E48B7E2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */; };
+		F2E48B812DA45E090072EF41 /* trending.html in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B802DA45CBB0072EF41 /* trending.html */; };
+		F2E48B842DA462010072EF41 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F2E48B832DA462010072EF41 /* SwiftSoup */; };
+		F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */; };
+		F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */; };
+		F2E48B8B2DA547F60072EF41 /* BundleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8A2DA547F30072EF41 /* BundleTag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +45,13 @@
 		F2E48B702DA4344A0072EF41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2E48B712DA4344A0072EF41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingApp.swift; sourceTree = "<group>"; };
-		F2E48B772DA434550072EF41 /* GithubTrendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingTests.swift; sourceTree = "<group>"; };
+		F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingExtractorTests.swift; sourceTree = "<group>"; };
 		F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingUITests.swift; sourceTree = "<group>"; };
 		F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2E48B802DA45CBB0072EF41 /* trending.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = trending.html; sourceTree = "<group>"; };
+		F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingExtractor.swift; sourceTree = "<group>"; };
+		F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTrendingRepos.swift; sourceTree = "<group>"; };
+		F2E48B8A2DA547F30072EF41 /* BundleTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleTag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B842DA462010072EF41 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +83,7 @@
 		F2E48B3B2DA3E6A10072EF41 = {
 			isa = PBXGroup;
 			children = (
+				F2E48B7F2DA45C9F0072EF41 /* DevelopmentAssets */,
 				F2E48B6E2DA3E9BF0072EF41 /* Configuration */,
 				F2E48B732DA4344A0072EF41 /* GithubTrending */,
 				F2E48B782DA434550072EF41 /* GithubTrendingTests */,
@@ -102,6 +113,7 @@
 		F2E48B732DA4344A0072EF41 /* GithubTrending */ = {
 			isa = PBXGroup;
 			children = (
+				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */,
 				F2E48B702DA4344A0072EF41 /* Assets.xcassets */,
 				F2E48B712DA4344A0072EF41 /* ContentView.swift */,
 				F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */,
@@ -112,7 +124,8 @@
 		F2E48B782DA434550072EF41 /* GithubTrendingTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2E48B772DA434550072EF41 /* GithubTrendingTests.swift */,
+				F2E48B872DA546F00072EF41 /* SupportingFiles */,
+				F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */,
 			);
 			path = GithubTrendingTests;
 			sourceTree = "<group>";
@@ -124,6 +137,23 @@
 				F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */,
 			);
 			path = GithubTrendingUITests;
+			sourceTree = "<group>";
+		};
+		F2E48B7F2DA45C9F0072EF41 /* DevelopmentAssets */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B802DA45CBB0072EF41 /* trending.html */,
+			);
+			path = DevelopmentAssets;
+			sourceTree = "<group>";
+		};
+		F2E48B872DA546F00072EF41 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B8A2DA547F30072EF41 /* BundleTag.swift */,
+				F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +173,7 @@
 			);
 			name = GithubTrending;
 			packageProductDependencies = (
+				F2E48B832DA462010072EF41 /* SwiftSoup */,
 			);
 			productName = GithubTrending;
 			productReference = F2E48B442DA3E6A10072EF41 /* GithubTrending.app */;
@@ -220,6 +251,9 @@
 			);
 			mainGroup = F2E48B3B2DA3E6A10072EF41;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F2E48B822DA462010072EF41 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F2E48B452DA3E6A10072EF41 /* Products */;
 			projectDirPath = "";
@@ -245,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B812DA45E090072EF41 /* trending.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */,
 				F2E48B752DA4344A0072EF41 /* ContentView.swift in Sources */,
 				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
 			);
@@ -271,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E48B792DA434550072EF41 /* GithubTrendingTests.swift in Sources */,
+				F2E48B8B2DA547F60072EF41 /* BundleTag.swift in Sources */,
+				F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */,
+				F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = DevelopmentAssets/trending.html;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -461,6 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = DevelopmentAssets/trending.html;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -599,6 +639,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2E48B822DA462010072EF41 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2E48B832DA462010072EF41 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E48B822DA462010072EF41 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2E48B3C2DA3E6A10072EF41 /* Project object */;
 }

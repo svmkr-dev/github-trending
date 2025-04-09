@@ -18,6 +18,8 @@
 		F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */; };
 		F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */; };
 		F2E48B8B2DA547F60072EF41 /* BundleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8A2DA547F30072EF41 /* BundleTag.swift */; };
+		F2E48B8D2DA5BA560072EF41 /* GithubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */; };
+		F2E48B8F2DA5BA670072EF41 /* GithubApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingExtractor.swift; sourceTree = "<group>"; };
 		F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTrendingRepos.swift; sourceTree = "<group>"; };
 		F2E48B8A2DA547F30072EF41 /* BundleTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleTag.swift; sourceTree = "<group>"; };
+		F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiClient.swift; sourceTree = "<group>"; };
+		F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		F2E48B732DA4344A0072EF41 /* GithubTrending */ = {
 			isa = PBXGroup;
 			children = (
+				F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */,
 				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */,
 				F2E48B702DA4344A0072EF41 /* Assets.xcassets */,
 				F2E48B712DA4344A0072EF41 /* ContentView.swift */,
@@ -124,6 +129,7 @@
 		F2E48B782DA434550072EF41 /* GithubTrendingTests */ = {
 			isa = PBXGroup;
 			children = (
+				F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */,
 				F2E48B872DA546F00072EF41 /* SupportingFiles */,
 				F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */,
 			);
@@ -297,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B8D2DA5BA560072EF41 /* GithubApiClient.swift in Sources */,
 				F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */,
 				F2E48B752DA4344A0072EF41 /* ContentView.swift in Sources */,
 				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
@@ -307,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E48B8F2DA5BA670072EF41 /* GithubApiClientTests.swift in Sources */,
 				F2E48B8B2DA547F60072EF41 /* BundleTag.swift in Sources */,
 				F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */,
 				F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */,

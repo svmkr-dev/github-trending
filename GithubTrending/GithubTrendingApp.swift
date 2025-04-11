@@ -12,7 +12,7 @@ import SwiftUI
 struct GithubTrendingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TrendingListView(model: TrendingList(rows: []))
         }
     }
 }

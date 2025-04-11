@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B702DA4344A0072EF41 /* Assets.xcassets */; };
-		F2E48B752DA4344A0072EF41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* ContentView.swift */; };
+		F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* TrendingListView.swift */; };
 		F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */; };
 		F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */; };
 		F2E48B7D2DA434570072EF41 /* GithubTrendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */; };
@@ -45,7 +45,7 @@
 		F2E48B5B2DA3E6A20072EF41 /* GithubTrendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B6F2DA3E9C80072EF41 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
 		F2E48B702DA4344A0072EF41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F2E48B712DA4344A0072EF41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2E48B712DA4344A0072EF41 /* TrendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListView.swift; sourceTree = "<group>"; };
 		F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingApp.swift; sourceTree = "<group>"; };
 		F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingExtractorTests.swift; sourceTree = "<group>"; };
 		F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingUITests.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */,
 				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */,
 				F2E48B702DA4344A0072EF41 /* Assets.xcassets */,
-				F2E48B712DA4344A0072EF41 /* ContentView.swift */,
+				F2E48B712DA4344A0072EF41 /* TrendingListView.swift */,
 				F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */,
 			);
 			path = GithubTrending;
@@ -305,7 +305,7 @@
 			files = (
 				F2E48B8D2DA5BA560072EF41 /* GithubApiClient.swift in Sources */,
 				F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */,
-				F2E48B752DA4344A0072EF41 /* ContentView.swift in Sources */,
+				F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */,
 				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

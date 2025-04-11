@@ -7,11 +7,7 @@
 
 import Foundation
 
-struct InvalidDataError: Error {
-    let data: Data
-}
-
-struct GithubTrendingClient {
+struct GithubTrendingClient: TrendingClient {
     func getTrendingPage() async throws -> String {
         let request = try requestForTrending()
 

@@ -11,11 +11,6 @@ struct ReadmeResponse: Decodable {
     let content: String
 }
 
-struct RequestConstructionError: Error {}
-struct HTTPError: Error {
-    let response: URLResponse
-}
-
 struct GithubApiClient {
     private let baseUrl = URL(string: "https://api.github.com/repos/")
 

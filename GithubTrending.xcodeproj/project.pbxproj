@@ -117,10 +117,9 @@
 		F2E48B732DA4344A0072EF41 /* GithubTrending */ = {
 			isa = PBXGroup;
 			children = (
-				F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */,
-				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */,
+				F2E48B912DA938830072EF41 /* Model */,
+				F2E48B902DA9387A0072EF41 /* Views */,
 				F2E48B702DA4344A0072EF41 /* Assets.xcassets */,
-				F2E48B712DA4344A0072EF41 /* TrendingListView.swift */,
 				F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */,
 			);
 			path = GithubTrending;
@@ -129,9 +128,8 @@
 		F2E48B782DA434550072EF41 /* GithubTrendingTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */,
+				F2E48B922DA9388F0072EF41 /* Model */,
 				F2E48B872DA546F00072EF41 /* SupportingFiles */,
-				F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */,
 			);
 			path = GithubTrendingTests;
 			sourceTree = "<group>";
@@ -160,6 +158,32 @@
 				F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F2E48B902DA9387A0072EF41 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B712DA4344A0072EF41 /* TrendingListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F2E48B912DA938830072EF41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */,
+				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2E48B922DA9388F0072EF41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */,
+				F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

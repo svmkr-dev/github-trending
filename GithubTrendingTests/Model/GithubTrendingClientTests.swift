@@ -8,6 +8,10 @@
 import Testing
 @testable import GithubTrending
 
+@Suite(
+    .serialized,
+    .tags(.com_example_recruitment_splunk.networking)
+)
 struct GithubTrendingClientTests {
     @Test func getTrendingPageShouldGetNonEmptyDocument() async throws {
         let testObj = GithubTrendingClient()

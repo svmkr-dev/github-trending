@@ -22,6 +22,7 @@
 		F2E48B8F2DA5BA670072EF41 /* GithubApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */; };
 		F2E48B942DA9395C0072EF41 /* GithubTrendingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B932DA939570072EF41 /* GithubTrendingClient.swift */; };
 		F2E48B962DA943450072EF41 /* GithubTrendingClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B952DA9433D0072EF41 /* GithubTrendingClientTests.swift */; };
+		F2E48B982DA949940072EF41 /* SwiftTestingTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B972DA949910072EF41 /* SwiftTestingTags.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiClientTests.swift; sourceTree = "<group>"; };
 		F2E48B932DA939570072EF41 /* GithubTrendingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingClient.swift; sourceTree = "<group>"; };
 		F2E48B952DA9433D0072EF41 /* GithubTrendingClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingClientTests.swift; sourceTree = "<group>"; };
+		F2E48B972DA949910072EF41 /* SwiftTestingTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestingTags.swift; sourceTree = "<group>"; };
+		F2E48B992DA94B5C0072EF41 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = UnitTests.xctestplan; path = GithubTrendingTests/UnitTests.xctestplan; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 		F2E48B872DA546F00072EF41 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				F2E48B972DA949910072EF41 /* SwiftTestingTags.swift */,
 				F2E48B8A2DA547F30072EF41 /* BundleTag.swift */,
 				F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */,
 			);
@@ -188,6 +192,7 @@
 				F2E48B952DA9433D0072EF41 /* GithubTrendingClientTests.swift */,
 				F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */,
 				F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */,
+				F2E48B992DA94B5C0072EF41 /* UnitTests.xctestplan */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */,
 				F2E48B962DA943450072EF41 /* GithubTrendingClientTests.swift in Sources */,
 				F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */,
+				F2E48B982DA949940072EF41 /* SwiftTestingTags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

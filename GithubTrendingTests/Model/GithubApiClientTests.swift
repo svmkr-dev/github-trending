@@ -9,6 +9,10 @@ import Foundation
 import Testing
 @testable import GithubTrending
 
+@Suite(
+    .serialized,
+    .tags(.com_example_recruitment_splunk.networking)
+)
 struct GithubApiClientTests {
     @Test func getReadmeShouldReturnReadmeOfKnownRepo() async throws {
         let repo = "chromium/-archived-chromium"

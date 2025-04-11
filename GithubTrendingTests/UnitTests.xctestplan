@@ -1,0 +1,48 @@
+{
+  "configurations" : [
+    {
+      "id" : "E08A0131-A081-479E-B08D-B38B9EBE794F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:GithubTrending.xcodeproj",
+      "identifier" : "F2E48B432DA3E6A10072EF41",
+      "name" : "GithubTrending"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "skippedTags" : {
+        "tags" : [
+          ".com_example_recruitment_splunk.networking"
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:GithubTrending.xcodeproj",
+        "identifier" : "F2E48B502DA3E6A20072EF41",
+        "name" : "GithubTrendingTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "skippedTags" : {
+        "tags" : [
+          ".com_example_recruitment_splunk.networking"
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:GithubTrending.xcodeproj",
+        "identifier" : "F2E48B5A2DA3E6A20072EF41",
+        "name" : "GithubTrendingUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

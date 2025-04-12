@@ -18,9 +18,9 @@ struct SwiftSoupTrendingExtractorTests {
                 .url(forResource: "trending", withExtension: "html")
         )
         let trendingHtml = try String(contentsOf: trendingDoc, encoding: .utf8)
-        let extractor = SwiftSoupTrendingExtractor(html: trendingHtml)
+        let extractor = SwiftSoupTrendingExtractor()
 
-        let results = try extractor.extractTrending()
+        let results = try extractor.extractTrending(from: trendingHtml)
 
         #expect(results.count == 12)
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F24541B82DAA6F630006CF32 /* TrendingReposService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541B72DAA6F5B0006CF32 /* TrendingReposService.swift */; };
+		F24541BA2DAA6F7A0006CF32 /* TrendingReposServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541B92DAA6F730006CF32 /* TrendingReposServiceTests.swift */; };
+		F24541BC2DAAEFF10006CF32 /* TrendingRepoEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */; };
+		F24541BD2DAAF1620006CF32 /* trending.html in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B802DA45CBB0072EF41 /* trending.html */; };
 		F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B702DA4344A0072EF41 /* Assets.xcassets */; };
 		F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* TrendingListView.swift */; };
 		F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */; };
@@ -46,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F24541B72DAA6F5B0006CF32 /* TrendingReposService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposService.swift; sourceTree = "<group>"; };
+		F24541B92DAA6F730006CF32 /* TrendingReposServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposServiceTests.swift; sourceTree = "<group>"; };
+		F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepoEntry.swift; sourceTree = "<group>"; };
 		F2E48B442DA3E6A10072EF41 /* GithubTrending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubTrending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B512DA3E6A20072EF41 /* GithubTrendingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B5B2DA3E6A20072EF41 /* GithubTrendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +195,8 @@
 			children = (
 				F2E48B9E2DA955490072EF41 /* Clients */,
 				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */,
+				F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */,
+				F24541B72DAA6F5B0006CF32 /* TrendingReposService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 			children = (
 				F2E48BA12DA9599D0072EF41 /* Clients */,
 				F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */,
+				F24541B92DAA6F730006CF32 /* TrendingReposServiceTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */,
+				F24541BD2DAAF1620006CF32 /* trending.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +381,9 @@
 				F2E48B9D2DA954960072EF41 /* DummyTrendingClient.swift in Sources */,
 				F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */,
 				F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */,
+				F24541B82DAA6F630006CF32 /* TrendingReposService.swift in Sources */,
 				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
+				F24541BC2DAAEFF10006CF32 /* TrendingRepoEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +394,7 @@
 				F2E48B8F2DA5BA670072EF41 /* GithubApiClientTests.swift in Sources */,
 				F2E48B8B2DA547F60072EF41 /* BundleTag.swift in Sources */,
 				F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */,
+				F24541BA2DAA6F7A0006CF32 /* TrendingReposServiceTests.swift in Sources */,
 				F2E48B962DA943450072EF41 /* GithubTrendingClientTests.swift in Sources */,
 				F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */,
 				F2E48B982DA949940072EF41 /* SwiftTestingTags.swift in Sources */,

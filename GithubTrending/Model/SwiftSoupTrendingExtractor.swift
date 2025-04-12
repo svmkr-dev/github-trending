@@ -7,26 +7,11 @@
 
 import SwiftSoup
 
-struct TrendingRepoEntry {
-    let fullname: String
-    let description: String
-    let lang: String
-    let stars: String
-    let forks: String
-    let starsSinceText: String
-}
-
-class SwiftSoupTrendingExtractor {
+struct SwiftSoupTrendingExtractor {
     private static let expectedStatsSpansCount = 3
     private static let expectedStatsLinksCount = 2
 
-    private let trendingPageHtml: String
-
-    init(html: String) {
-        trendingPageHtml = html
-    }
-
-    func extractTrending() throws -> [TrendingRepoEntry] {
+    func extractTrending(from trendingPageHtml: String) throws -> [TrendingRepoEntry] {
         let document = try SwiftSoup.parse(trendingPageHtml, "https://github.com/")
         let trendingRows = try document.select("article.Box-row")
         var results = [TrendingRepoEntry]()

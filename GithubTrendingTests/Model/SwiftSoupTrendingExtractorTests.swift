@@ -14,8 +14,7 @@ struct SwiftSoupTrendingExtractorTests {
 
     @Test func shouldExtractTrendingRepos() async throws {
         let trendingDoc = try #require(
-            Bundle(for: BundleTag.self)
-                .url(forResource: "trending", withExtension: "html")
+            Bundle.main.url(forResource: "trending", withExtension: "html")
         )
         let trendingHtml = try String(contentsOf: trendingDoc, encoding: .utf8)
         let extractor = SwiftSoupTrendingExtractor()

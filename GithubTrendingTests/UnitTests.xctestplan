@@ -28,20 +28,6 @@
         "identifier" : "F2E48B502DA3E6A20072EF41",
         "name" : "GithubTrendingTests"
       }
-    },
-    {
-      "enabled" : false,
-      "parallelizable" : true,
-      "skippedTags" : {
-        "tags" : [
-          ".com_example_recruitment_splunk.networking"
-        ]
-      },
-      "target" : {
-        "containerPath" : "container:GithubTrending.xcodeproj",
-        "identifier" : "F2E48B5A2DA3E6A20072EF41",
-        "name" : "GithubTrendingUITests"
-      }
     }
   ],
   "version" : 1

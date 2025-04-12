@@ -17,11 +17,9 @@
 		F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */; };
 		F2E48B7D2DA434570072EF41 /* GithubTrendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */; };
 		F2E48B7E2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */; };
-		F2E48B812DA45E090072EF41 /* trending.html in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B802DA45CBB0072EF41 /* trending.html */; };
 		F2E48B842DA462010072EF41 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F2E48B832DA462010072EF41 /* SwiftSoup */; };
 		F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */; };
 		F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */; };
-		F2E48B8B2DA547F60072EF41 /* BundleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8A2DA547F30072EF41 /* BundleTag.swift */; };
 		F2E48B8D2DA5BA560072EF41 /* GithubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */; };
 		F2E48B8F2DA5BA670072EF41 /* GithubApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */; };
 		F2E48B942DA9395C0072EF41 /* GithubTrendingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B932DA939570072EF41 /* GithubTrendingClient.swift */; };
@@ -66,7 +64,6 @@
 		F2E48B802DA45CBB0072EF41 /* trending.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = trending.html; sourceTree = "<group>"; };
 		F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingExtractor.swift; sourceTree = "<group>"; };
 		F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTrendingRepos.swift; sourceTree = "<group>"; };
-		F2E48B8A2DA547F30072EF41 /* BundleTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleTag.swift; sourceTree = "<group>"; };
 		F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiClient.swift; sourceTree = "<group>"; };
 		F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiClientTests.swift; sourceTree = "<group>"; };
 		F2E48B932DA939570072EF41 /* GithubTrendingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingClient.swift; sourceTree = "<group>"; };
@@ -176,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				F2E48B972DA949910072EF41 /* SwiftTestingTags.swift */,
-				F2E48B8A2DA547F30072EF41 /* BundleTag.swift */,
 				F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */,
 			);
 			path = SupportingFiles;
@@ -356,7 +352,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E48B812DA45E090072EF41 /* trending.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +387,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E48B8F2DA5BA670072EF41 /* GithubApiClientTests.swift in Sources */,
-				F2E48B8B2DA547F60072EF41 /* BundleTag.swift in Sources */,
 				F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */,
 				F24541BA2DAA6F7A0006CF32 /* TrendingReposServiceTests.swift in Sources */,
 				F2E48B962DA943450072EF41 /* GithubTrendingClientTests.swift in Sources */,

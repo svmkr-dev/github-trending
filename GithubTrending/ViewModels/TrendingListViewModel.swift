@@ -1,4 +1,4 @@
-////  TrendingViewModel.swift
+////  TrendingListViewModel.swift
 //  GithubTrending
 //
 //  Created on 12.04.2025.
@@ -9,7 +9,7 @@ import Observation
 
 @MainActor
 @Observable
-class TrendingViewModel {
+class TrendingListViewModel {
     enum State {
         case idle, loading, error
     }

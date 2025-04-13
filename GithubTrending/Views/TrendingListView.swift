@@ -22,7 +22,7 @@ struct TrendingList {
 }
 
 struct TrendingListView: View {
-    private let model: TrendingViewModel
+    private let model: TrendingListViewModel
     @State private var expanded: Set<TrendingRepoEntry.ID> = Set()
 
     var body: some View {
@@ -52,7 +52,7 @@ struct TrendingListView: View {
         }
     }
 
-    init(model: TrendingViewModel) {
+    init(model: TrendingListViewModel) {
         self.model = model
     }
 }
@@ -65,7 +65,7 @@ struct TrendingListView: View {
         dataExtractor: extractor
     )
 
-    let viewModel = TrendingViewModel(service: service)
+    let viewModel = TrendingListViewModel(service: service)
     NavigationStack {
         TrendingListView(model: viewModel)
     }

@@ -1,4 +1,4 @@
-////  TrendingViewModelTests.swift
+////  TrendingListViewModelTests.swift
 //  GithubTrending
 //
 //  Created on 12.04.2025.
@@ -30,7 +30,7 @@ class FakeTrendingService: TrendingReposServiceProtocol {
 struct DummyError: Error {}
 
 @MainActor
-struct TrendingViewModelTests {
+struct TrendingListViewModelTests {
     @Test func refreshShouldChangeCurrentRepositories() async {
         let dummyClient = DummyTrendingClient()
         let extractor = SwiftSoupTrendingExtractor()
@@ -38,7 +38,7 @@ struct TrendingViewModelTests {
             trendingClient: dummyClient,
             dataExtractor: extractor
         )
-        let testObj = TrendingViewModel(service: service)
+        let testObj = TrendingListViewModel(service: service)
         let repositoriesBeforeRefresh = testObj.repositories
 
         await testObj.refresh()
@@ -49,7 +49,7 @@ struct TrendingViewModelTests {
 
     @Test func refreshShouldChangeCurrentState() async {
         let fakeService = FakeTrendingService()
-        let testObj = TrendingViewModel(service: fakeService)
+        let testObj = TrendingListViewModel(service: fakeService)
 
         fakeService.actionBeforeReturn = { @MainActor in
             #expect(testObj.currentState == .loading)
@@ -63,7 +63,7 @@ struct TrendingViewModelTests {
 
     @Test func refreshShouldSetErrorStateInCaseOfError() async {
         let fakeService = FakeTrendingService()
-        let testObj = TrendingViewModel(service: fakeService)
+        let testObj = TrendingListViewModel(service: fakeService)
 
         fakeService.errorToThrow = DummyError()
 
@@ -74,7 +74,7 @@ struct TrendingViewModelTests {
 
     @Test func refreshShoudlReturnToIdleWhenCancelled() async {
         let fakeService = FakeTrendingService()
-        let testObj = TrendingViewModel(service: fakeService)
+        let testObj = TrendingListViewModel(service: fakeService)
 
         fakeService.errorToThrow = CancellationError()
 

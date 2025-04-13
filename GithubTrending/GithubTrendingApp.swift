@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct GithubTrendingApp: App {
-    @State var viewModel: TrendingViewModel
+    @State var viewModel: TrendingListViewModel
 
     var body: some Scene {
         WindowGroup {
@@ -26,6 +26,6 @@ struct GithubTrendingApp: App {
             dataExtractor: extractor
         )
 
-        viewModel = TrendingViewModel(service: service)
+        viewModel = TrendingListViewModel(service: service)
     }
 }

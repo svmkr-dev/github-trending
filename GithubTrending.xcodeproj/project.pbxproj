@@ -13,6 +13,7 @@
 		F24541BD2DAAF1620006CF32 /* trending.html in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B802DA45CBB0072EF41 /* trending.html */; };
 		F24541C12DAAF9A50006CF32 /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541C02DAAF9A20006CF32 /* TrendingViewModel.swift */; };
 		F24541C42DAB00B40006CF32 /* TrendingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541C32DAB00AF0006CF32 /* TrendingViewModelTests.swift */; };
+		F24541C62DABE7C50006CF32 /* TrendingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541C52DABE7C00006CF32 /* TrendingRowView.swift */; };
 		F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B702DA4344A0072EF41 /* Assets.xcassets */; };
 		F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* TrendingListView.swift */; };
 		F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */; };
@@ -55,6 +56,7 @@
 		F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepoEntry.swift; sourceTree = "<group>"; };
 		F24541C02DAAF9A20006CF32 /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
 		F24541C32DAB00AF0006CF32 /* TrendingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModelTests.swift; sourceTree = "<group>"; };
+		F24541C52DABE7C00006CF32 /* TrendingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRowView.swift; sourceTree = "<group>"; };
 		F2E48B442DA3E6A10072EF41 /* GithubTrending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubTrending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B512DA3E6A20072EF41 /* GithubTrendingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B5B2DA3E6A20072EF41 /* GithubTrendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +205,7 @@
 		F2E48B902DA9387A0072EF41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F24541C52DABE7C00006CF32 /* TrendingRowView.swift */,
 				F2E48B712DA4344A0072EF41 /* TrendingListView.swift */,
 			);
 			path = Views;
@@ -393,6 +396,7 @@
 			files = (
 				F2E48B8D2DA5BA560072EF41 /* GithubApiClient.swift in Sources */,
 				F2E48BA02DA956B90072EF41 /* ClientErrors.swift in Sources */,
+				F24541C62DABE7C50006CF32 /* TrendingRowView.swift in Sources */,
 				F2E48B9B2DA954610072EF41 /* TrendingClient.swift in Sources */,
 				F2E48B942DA9395C0072EF41 /* GithubTrendingClient.swift in Sources */,
 				F2E48B9D2DA954960072EF41 /* DummyTrendingClient.swift in Sources */,

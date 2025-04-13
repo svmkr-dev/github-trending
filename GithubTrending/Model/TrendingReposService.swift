@@ -5,7 +5,11 @@
 //  
 //
 
-struct TrendingReposService {
+protocol TrendingReposServiceProtocol {
+    func getTrendingRepos() async throws -> [TrendingRepoEntry]
+}
+
+struct TrendingReposService: TrendingReposServiceProtocol {
     private let trendingClient: any TrendingClient
     private let dataExtractor: SwiftSoupTrendingExtractor
 

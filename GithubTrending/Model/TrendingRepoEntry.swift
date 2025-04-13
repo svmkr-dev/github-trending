@@ -13,3 +13,9 @@ struct TrendingRepoEntry: Equatable {
     let forks: String
     let starsSinceText: String
 }
+
+extension TrendingRepoEntry: Identifiable {
+    var id: String {
+        fullname
+    }
+}

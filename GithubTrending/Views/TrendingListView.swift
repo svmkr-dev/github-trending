@@ -22,24 +22,25 @@ struct TrendingList {
 }
 
 struct TrendingListView: View {
-    private let model: TrendingList
-
-    @State var expanded: Set<TrendingRow.ID> = Set()
+    private let model: TrendingViewModel
+    @State private var expanded: Set<TrendingRepoEntry.ID> = Set()
 
     var body: some View {
         ScrollView {
-            ForEach(model.rows) { rowModel in
-                TrendingRowView(model: rowModel, isExpanded: expanded.contains(rowModel.id))
-                    .padding()
-                    .background(.listRowBackground)
-                    .cornerRadius(8)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        let (added, _) = expanded.insert(rowModel.id)
-                        if !added {
-                            expanded.remove(rowModel.id)
+            LazyVStack {
+                ForEach(model.repositories) { rowModel in
+                    TrendingRowView(model: rowModel, isExpanded: expanded.contains(rowModel.id))
+                        .padding()
+                        .background(.listRowBackground)
+                        .cornerRadius(8)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            let (added, _) = expanded.insert(rowModel.id)
+                            if !added {
+                                expanded.remove(rowModel.id)
+                            }
                         }
-                    }
+                }
             }
         }
         .padding()
@@ -47,36 +48,25 @@ struct TrendingListView: View {
         .navigationTitle("Trending")
         .animation(.bouncy(duration: 0.3), value: expanded)
         .refreshable {
-            
+            await model.refresh()
         }
     }
 
-    init(model: TrendingList) {
+    init(model: TrendingViewModel) {
         self.model = model
     }
 }
 
 #Preview {
+    let dummyClient = DummyTrendingClient()
+    let extractor = SwiftSoupTrendingExtractor()
+    let service = TrendingReposService(
+        trendingClient: dummyClient,
+        dataExtractor: extractor
+    )
+
+    let viewModel = TrendingViewModel(service: service)
     NavigationStack {
-        TrendingListView(model: TrendingList(rows: [
-            TrendingRow(
-                id: 1,
-                fullname: "Lorem/Ipsum",
-                descritpiton: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis neque sed sapien congue sagittis. Mauris ullamcorper vestibulum molestie.",
-                lang: "Python",
-                stars: "5,444",
-                forks: "666",
-                starsSince: "49"
-            ),
-            TrendingRow(
-                id: 2,
-                fullname: "Lorem/Ipsum",
-                descritpiton: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis neque sed sapien congue sagittis. Mauris ullamcorper vestibulum molestie.",
-                lang: "Python",
-                stars: "5,444",
-                forks: "666",
-                starsSince: "49"
-            )
-        ]))
+        TrendingListView(model: viewModel)
     }
 }

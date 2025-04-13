@@ -10,9 +10,22 @@ import SwiftUI
 
 @main
 struct GithubTrendingApp: App {
+    @State var viewModel: TrendingViewModel
+
     var body: some Scene {
         WindowGroup {
-            TrendingListView(model: TrendingList(rows: []))
+            TrendingListView(model: viewModel)
         }
+    }
+
+    init() {
+        let client = GithubTrendingClient()
+        let extractor = SwiftSoupTrendingExtractor()
+        let service = TrendingReposService(
+            trendingClient: client,
+            dataExtractor: extractor
+        )
+
+        viewModel = TrendingViewModel(service: service)
     }
 }

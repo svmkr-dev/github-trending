@@ -5,7 +5,7 @@
 //  
 //
 
-protocol TrendingReposServiceProtocol {
+protocol TrendingReposServiceProtocol: Sendable {
     func getTrendingRepos() async throws -> [TrendingRepoEntry]
 }
 

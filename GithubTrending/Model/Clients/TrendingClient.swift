@@ -5,6 +5,6 @@
 //  
 //
 
-protocol TrendingClient {
+protocol TrendingClient: Sendable {
     func getTrendingPage() async throws -> String
 }

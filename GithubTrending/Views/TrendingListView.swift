@@ -8,22 +8,18 @@
 
 import SwiftUI
 
-struct TrendingRow: Identifiable {
-    let id: Int
-    let fullname: String
-    let descritpiton: String
-    let lang: String
-    let stars: String
-    let forks: String
-    let starsSince: String
-}
-struct TrendingList {
-    let rows: [TrendingRow]
+enum DateRange: String, CaseIterable, Identifiable {
+    case today = "Today"
+    case week = "This week"
+    case month = "This month"
+
+    var id: Self { self }
 }
 
 struct TrendingListView: View {
     private let model: TrendingListViewModel
     @State private var expanded: Set<TrendingRepoEntry.ID> = Set()
+    @State private var range: DateRange = .today
 
     var body: some View {
         ScrollView {
@@ -49,6 +45,18 @@ struct TrendingListView: View {
         .animation(.bouncy(duration: 0.3), value: expanded)
         .refreshable {
             await model.refresh()
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Picker(range.rawValue, selection: $range) {
+                    ForEach(DateRange.allCases) { range in
+                        Text(range.rawValue)
+                    }
+                    .onChange(of: range) {
+                        Task { await model.refresh() }
+                    }
+                }
+            }
         }
     }
 

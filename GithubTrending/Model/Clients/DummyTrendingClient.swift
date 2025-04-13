@@ -8,7 +8,7 @@
 import Foundation
 
 struct DummyTrendingClient: TrendingClient {
-    func getTrendingPage() async throws -> String {
+    func getTrendingPage(dateRange: DateRange = .today) async throws -> String {
         guard let url = Bundle.main.url(forResource: "trending", withExtension: "html")
         else {
             throw InvalidDataError(data: nil)

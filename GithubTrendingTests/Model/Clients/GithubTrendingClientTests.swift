@@ -20,4 +20,16 @@ struct GithubTrendingClientTests {
 
         #expect(!html.isEmpty)
     }
+
+    @Test func getTrendingPageShouldGetDistinctDocumentsForDifferentArgs() async throws {
+        let testObj = GithubTrendingClient()
+
+        let daily = try await testObj.getTrendingPage()
+        let weekly = try await testObj.getTrendingPage(dateRange: .week)
+        let monthly = try await testObj.getTrendingPage(dateRange: .month)
+
+        #expect(daily != weekly)
+        #expect(weekly != monthly)
+        #expect(daily != monthly)
+    }
 }

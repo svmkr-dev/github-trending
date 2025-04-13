@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "DE93040C-E909-42F6-ACB3-9917B10F7B19",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTags" : {
+        "tags" : [
+          ".com_example_recruitment_splunk.networking"
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:GithubTrending.xcodeproj",
+        "identifier" : "F2E48B502DA3E6A20072EF41",
+        "name" : "GithubTrendingTests"
+      }
+    }
+  ],
+  "version" : 1
+}

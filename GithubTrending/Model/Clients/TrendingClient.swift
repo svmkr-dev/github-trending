@@ -5,6 +5,14 @@
 //  
 //
 
+enum DateRange: String, CaseIterable, Identifiable {
+    case today = "daily"
+    case week = "weekly"
+    case month = "monthly"
+
+    var id: Self { self }
+}
+
 protocol TrendingClient: Sendable {
-    func getTrendingPage() async throws -> String
+    func getTrendingPage(dateRange: DateRange) async throws -> String
 }

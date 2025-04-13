@@ -19,7 +19,7 @@ struct TrendingReposService: TrendingReposServiceProtocol {
     }
 
     func getTrendingRepos() async throws -> [TrendingRepoEntry] {
-        let html = try await trendingClient.getTrendingPage()
+        let html = try await trendingClient.getTrendingPage(dateRange: .today)
         return try dataExtractor.extractTrending(from: html)
     }
 }

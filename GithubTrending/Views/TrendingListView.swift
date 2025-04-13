@@ -8,14 +8,6 @@
 
 import SwiftUI
 
-enum DateRange: String, CaseIterable, Identifiable {
-    case today = "Today"
-    case week = "This week"
-    case month = "This month"
-
-    var id: Self { self }
-}
-
 struct TrendingListView: View {
     private let model: TrendingListViewModel
     @State private var expanded: Set<TrendingRepoEntry.ID> = Set()

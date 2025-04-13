@@ -57,6 +57,7 @@
 		F24541C02DAAF9A20006CF32 /* TrendingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListViewModel.swift; sourceTree = "<group>"; };
 		F24541C32DAB00AF0006CF32 /* TrendingListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListViewModelTests.swift; sourceTree = "<group>"; };
 		F24541C52DABE7C00006CF32 /* TrendingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRowView.swift; sourceTree = "<group>"; };
+		F24541C82DAC1DDF0006CF32 /* NetworkingTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetworkingTests.xctestplan; sourceTree = "<group>"; };
 		F2E48B442DA3E6A10072EF41 /* GithubTrending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubTrending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B512DA3E6A20072EF41 /* GithubTrendingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B5B2DA3E6A20072EF41 /* GithubTrendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +173,7 @@
 				F24541C22DAB00A50006CF32 /* ViewModels */,
 				F2E48B872DA546F00072EF41 /* SupportingFiles */,
 				F2E48B992DA94B5C0072EF41 /* UnitTests.xctestplan */,
+				F24541C82DAC1DDF0006CF32 /* NetworkingTests.xctestplan */,
 			);
 			path = GithubTrendingTests;
 			sourceTree = "<group>";

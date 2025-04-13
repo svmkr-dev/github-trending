@@ -33,6 +33,9 @@
             reference = "container:GithubTrendingTests/UnitTests.xctestplan"
             default = "YES">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:GithubTrendingTests/NetworkingTests.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference

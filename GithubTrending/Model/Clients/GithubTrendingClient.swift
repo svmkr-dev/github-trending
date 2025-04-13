@@ -8,8 +8,8 @@
 import Foundation
 
 struct GithubTrendingClient: TrendingClient {
-    func getTrendingPage() async throws -> String {
-        let request = try requestForTrending()
+    func getTrendingPage(dateRange: DateRange = .today) async throws -> String {
+        let request = try requestForTrending(dateRange: dateRange)
 
         let (data, response) = try await URLSession.shared.data(for: request)
         try Task.checkCancellation()
@@ -26,8 +26,14 @@ struct GithubTrendingClient: TrendingClient {
         return pageHtml
     }
 
-    private func requestForTrending() throws -> URLRequest {
-        guard let url = URL(string: "https://github.com/trending") else {
+    private func requestForTrending(dateRange: DateRange) throws -> URLRequest {
+        guard var urlComponents = URLComponents(string: "https://github.com/trending") else {
+            throw RequestConstructionError()
+        }
+
+        urlComponents.queryItems = [URLQueryItem(name: "since", value: dateRange.rawValue)]
+
+        guard let url = urlComponents.url else {
             throw RequestConstructionError()
         }
 

@@ -47,6 +47,21 @@ struct TrendingView: View {
                 await model.refresh()
             }
             .toolbar(content: toolbar)
+            .overlay {
+                if model.currentState == .error {
+                    ContentUnavailableView {
+                        Label("Error retrieving repositories", systemImage: "x.circle.fill")
+                    } description: {
+                        Text("Please try again")
+                            .multilineTextAlignment(.center)
+                    } actions: {
+                        Button("Refresh", action: refreshAction)
+                            .padding()
+                            .buttonStyle(.bordered)
+                    }
+                }
+            }
+            .preferredColorScheme(colorScheme)
     }
 
     init(model: TrendingViewModel) {
@@ -96,7 +111,7 @@ struct TrendingView: View {
     }
 }
 
-#Preview {
+#Preview("Default state") {
     let dummyClient = DummyTrendingClient()
     let parser = SwiftSoupTrendingParser()
     let service = TrendingReposService(
@@ -105,6 +120,23 @@ struct TrendingView: View {
     )
 
     let viewModel = TrendingViewModel(service: service)
+    NavigationStack {
+        TrendingView(model: viewModel)
+    }
+}
+
+fileprivate struct ThrowingService: TrendingReposServiceProtocol {
+    struct FakeError: Error {}
+
+    func getTrendingRepos(dateRange: DateRange) async throws -> [TrendingRepoEntry] {
+        throw FakeError()
+    }
+}
+
+#Preview("Error state") {
+    let service = ThrowingService()
+    let viewModel = TrendingViewModel(service: service)
+
     NavigationStack {
         TrendingView(model: viewModel)
     }

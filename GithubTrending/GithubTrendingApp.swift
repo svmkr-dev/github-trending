@@ -22,10 +22,10 @@ struct GithubTrendingApp: App {
 
     init() {
         let client = GithubTrendingClient()
-        let extractor = SwiftSoupTrendingExtractor()
+        let extractor = SwiftSoupTrendingParser()
         let service = TrendingReposService(
             trendingClient: client,
-            dataExtractor: extractor
+            parser: extractor
         )
 
         viewModel = TrendingListViewModel(service: service)

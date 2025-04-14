@@ -59,10 +59,10 @@ struct TrendingListView: View {
 
 #Preview {
     let dummyClient = DummyTrendingClient()
-    let extractor = SwiftSoupTrendingExtractor()
+    let parser = SwiftSoupTrendingParser()
     let service = TrendingReposService(
         trendingClient: dummyClient,
-        dataExtractor: extractor
+        parser: parser
     )
 
     let viewModel = TrendingListViewModel(service: service)

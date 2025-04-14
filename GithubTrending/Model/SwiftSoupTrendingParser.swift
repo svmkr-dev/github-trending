@@ -1,4 +1,4 @@
-////  SwiftSoupTrendingExtractor.swift
+////  SwiftSoupTrendingParser.swift
 //  GithubTrending
 //
 //  Created on 08.04.2025.
@@ -7,11 +7,11 @@
 
 import SwiftSoup
 
-struct SwiftSoupTrendingExtractor {
+struct SwiftSoupTrendingParser {
     private static let expectedStatsSpansCount = 3
     private static let expectedStatsLinksCount = 2
 
-    func extractTrending(from trendingPageHtml: String) throws -> [TrendingRepoEntry] {
+    func parseTrending(from trendingPageHtml: String) throws -> [TrendingRepoEntry] {
         let document = try SwiftSoup.parse(trendingPageHtml, "https://github.com/")
         let trendingRows = try document.select("article.Box-row")
         var results = [TrendingRepoEntry]()
@@ -28,7 +28,7 @@ struct SwiftSoupTrendingExtractor {
         let lang: String
         let starsSinceText = try statsSpans.last()?.text(trimAndNormaliseWhitespace: true) ?? ""
 
-        if statsSpans.count == SwiftSoupTrendingExtractor.expectedStatsSpansCount {
+        if statsSpans.count == SwiftSoupTrendingParser.expectedStatsSpansCount {
             lang = try statsSpans.first()?.text(trimAndNormaliseWhitespace: true) ?? ""
         } else {
             lang = ""
@@ -38,7 +38,7 @@ struct SwiftSoupTrendingExtractor {
         let stars = try starsAndForksLinks.first()?.text(trimAndNormaliseWhitespace: true) ?? ""
         let forks: String
 
-        if starsAndForksLinks.count == SwiftSoupTrendingExtractor.expectedStatsLinksCount {
+        if starsAndForksLinks.count == SwiftSoupTrendingParser.expectedStatsLinksCount {
             forks = try starsAndForksLinks.last()?.text(trimAndNormaliseWhitespace: true) ?? ""
         } else {
             forks = ""

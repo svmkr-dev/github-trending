@@ -33,10 +33,10 @@ struct DummyError: Error {}
 struct TrendingListViewModelTests {
     @Test func refreshShouldChangeCurrentRepositories() async {
         let dummyClient = DummyTrendingClient()
-        let extractor = SwiftSoupTrendingExtractor()
+        let parser = SwiftSoupTrendingParser()
         let service = TrendingReposService(
             trendingClient: dummyClient,
-            dataExtractor: extractor
+            parser: parser
         )
         let testObj = TrendingListViewModel(service: service)
         let repositoriesBeforeRefresh = testObj.repositories

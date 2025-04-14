@@ -11,10 +11,10 @@ import Testing
 struct TrendingReposServiceTests {
     @Test func getTrendingReposShouldReturnExpectedRepos() async throws {
         let client = DummyTrendingClient()
-        let extractor = SwiftSoupTrendingExtractor()
+        let parser = SwiftSoupTrendingParser()
         let testObj = TrendingReposService(
             trendingClient: client,
-            dataExtractor: extractor
+            parser: parser
         )
 
         let results = try await testObj.getTrendingRepos()

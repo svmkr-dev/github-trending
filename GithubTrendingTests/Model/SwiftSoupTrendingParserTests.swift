@@ -1,5 +1,5 @@
-////  SwiftSoupTrendingExtractorTests.swift
-//  SwiftSoupTrendingExtractorTests
+////  SwiftSoupTrendingParserTests.swift
+//  SwiftSoupTrendingParserTests
 //
 //  Created on 07.04.2025.
 //  
@@ -10,16 +10,16 @@ import Foundation
 import Testing
 @testable import GithubTrending
 
-struct SwiftSoupTrendingExtractorTests {
+struct SwiftSoupTrendingParserTests {
 
-    @Test func shouldExtractTrendingRepos() async throws {
+    @Test func shouldParseTrendingRepos() async throws {
         let trendingDoc = try #require(
             Bundle.main.url(forResource: "trending", withExtension: "html")
         )
         let trendingHtml = try String(contentsOf: trendingDoc, encoding: .utf8)
-        let extractor = SwiftSoupTrendingExtractor()
+        let parser = SwiftSoupTrendingParser()
 
-        let results = try extractor.extractTrending(from: trendingHtml)
+        let results = try parser.parseTrending(from: trendingHtml)
 
         #expect(results.count == 12)
 

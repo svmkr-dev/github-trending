@@ -17,11 +17,11 @@
 		F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B702DA4344A0072EF41 /* Assets.xcassets */; };
 		F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* TrendingListView.swift */; };
 		F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */; };
-		F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */; };
+		F2E48B792DA434550072EF41 /* SwiftSoupTrendingParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* SwiftSoupTrendingParserTests.swift */; };
 		F2E48B7D2DA434570072EF41 /* GithubTrendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */; };
 		F2E48B7E2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */; };
 		F2E48B842DA462010072EF41 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F2E48B832DA462010072EF41 /* SwiftSoup */; };
-		F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */; };
+		F2E48B862DA525450072EF41 /* SwiftSoupTrendingParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingParser.swift */; };
 		F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */; };
 		F2E48B8D2DA5BA560072EF41 /* GithubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */; };
 		F2E48B8F2DA5BA670072EF41 /* GithubApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */; };
@@ -65,11 +65,11 @@
 		F2E48B702DA4344A0072EF41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2E48B712DA4344A0072EF41 /* TrendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListView.swift; sourceTree = "<group>"; };
 		F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingApp.swift; sourceTree = "<group>"; };
-		F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingExtractorTests.swift; sourceTree = "<group>"; };
+		F2E48B772DA434550072EF41 /* SwiftSoupTrendingParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingParserTests.swift; sourceTree = "<group>"; };
 		F2E48B7A2DA434570072EF41 /* GithubTrendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingUITests.swift; sourceTree = "<group>"; };
 		F2E48B7B2DA434570072EF41 /* GithubTrendingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2E48B802DA45CBB0072EF41 /* trending.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = trending.html; sourceTree = "<group>"; };
-		F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingExtractor.swift; sourceTree = "<group>"; };
+		F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingParser.swift; sourceTree = "<group>"; };
 		F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTrendingRepos.swift; sourceTree = "<group>"; };
 		F2E48B8C2DA5BA520072EF41 /* GithubApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiClient.swift; sourceTree = "<group>"; };
 		F2E48B8E2DA5BA630072EF41 /* GithubApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiClientTests.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				F2E48B9E2DA955490072EF41 /* Clients */,
-				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingExtractor.swift */,
+				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingParser.swift */,
 				F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */,
 				F24541B72DAA6F5B0006CF32 /* TrendingReposService.swift */,
 			);
@@ -228,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F2E48BA12DA9599D0072EF41 /* Clients */,
-				F2E48B772DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift */,
+				F2E48B772DA434550072EF41 /* SwiftSoupTrendingParserTests.swift */,
 				F24541B92DAA6F730006CF32 /* TrendingReposServiceTests.swift */,
 			);
 			path = Model;
@@ -402,7 +402,7 @@
 				F2E48B9B2DA954610072EF41 /* TrendingClient.swift in Sources */,
 				F2E48B942DA9395C0072EF41 /* GithubTrendingClient.swift in Sources */,
 				F2E48B9D2DA954960072EF41 /* DummyTrendingClient.swift in Sources */,
-				F2E48B862DA525450072EF41 /* SwiftSoupTrendingExtractor.swift in Sources */,
+				F2E48B862DA525450072EF41 /* SwiftSoupTrendingParser.swift in Sources */,
 				F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */,
 				F24541B82DAA6F630006CF32 /* TrendingReposService.swift in Sources */,
 				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
@@ -420,7 +420,7 @@
 				F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */,
 				F24541BA2DAA6F7A0006CF32 /* TrendingReposServiceTests.swift in Sources */,
 				F2E48B962DA943450072EF41 /* GithubTrendingClientTests.swift in Sources */,
-				F2E48B792DA434550072EF41 /* SwiftSoupTrendingExtractorTests.swift in Sources */,
+				F2E48B792DA434550072EF41 /* SwiftSoupTrendingParserTests.swift in Sources */,
 				F2E48B982DA949940072EF41 /* SwiftTestingTags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,16 +11,16 @@ protocol TrendingReposServiceProtocol: Sendable {
 
 struct TrendingReposService: TrendingReposServiceProtocol {
     private let trendingClient: any TrendingClient
-    private let dataExtractor: SwiftSoupTrendingExtractor
+    private let parser: SwiftSoupTrendingParser
 
-    init(trendingClient: any TrendingClient, dataExtractor: SwiftSoupTrendingExtractor) {
+    init(trendingClient: any TrendingClient, parser: SwiftSoupTrendingParser) {
         self.trendingClient = trendingClient
-        self.dataExtractor = dataExtractor
+        self.parser = parser
     }
 
     func getTrendingRepos() async throws -> [TrendingRepoEntry] {
         let html = try await trendingClient.getTrendingPage(dateRange: .today)
-        return try dataExtractor.extractTrending(from: html)
+        return try parser.parseTrending(from: html)
     }
 }
 

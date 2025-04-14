@@ -13,55 +13,81 @@ struct DummyError: Error {}
 
 @MainActor
 struct TrendingListViewModelTests {
-    @Test func refreshShouldChangeCurrentRepositories() async {
-        let dummyClient = DummyTrendingClient()
-        let parser = SwiftSoupTrendingParser()
-        let service = TrendingReposService(
-            trendingClient: dummyClient,
-            parser: parser
-        )
-        let testObj = TrendingListViewModel(service: service)
-        let repositoriesBeforeRefresh = testObj.repositories
 
-        await testObj.refresh()
+    @MainActor
+    struct UsingDummyClient {
+        let service: TrendingReposService
+        let testObj: TrendingListViewModel
 
-        #expect(repositoriesBeforeRefresh != testObj.repositories)
-        #expect(testObj.repositories == sampleTrending)
-    }
-
-    @Test func refreshShouldChangeCurrentState() async {
-        let fakeService = FakeTrendingService()
-        let testObj = TrendingListViewModel(service: fakeService)
-
-        fakeService.actionBeforeReturn = { @MainActor in
-            #expect(testObj.currentState == .loading)
+        init() {
+            let dummyClient = DummyTrendingClient()
+            let parser = SwiftSoupTrendingParser()
+            service = TrendingReposService(
+                trendingClient: dummyClient,
+                parser: parser
+            )
+            testObj = TrendingListViewModel(service: service)
         }
 
-        #expect(testObj.currentState == .idle)
-        await testObj.refresh()
+        @Test func refreshShouldChangeCurrentRepositories() async {
+            let repositoriesBeforeRefresh = testObj.repositories
 
-        #expect(testObj.currentState == .idle)
+            await testObj.refresh()
+
+            #expect(repositoriesBeforeRefresh != testObj.repositories)
+            #expect(testObj.repositories == sampleTrending)
+        }
+
+        @Test func refreshAfterDateRangeChangeShouldChangeCurrentRepositories() async  {
+            await testObj.refresh()
+
+            let repositoriesBeforeChange = testObj.repositories
+
+            testObj.dateRange = .month
+            await testObj.refresh()
+
+            #expect(!testObj.repositories.isEmpty)
+            #expect(testObj.currentState == .idle)
+            #expect(repositoriesBeforeChange != testObj.repositories)
+        }
     }
 
-    @Test func refreshShouldSetErrorStateInCaseOfError() async {
-        let fakeService = FakeTrendingService()
-        let testObj = TrendingListViewModel(service: fakeService)
+    @MainActor
+    struct UsingFakeService {
+        let fakeService: FakeTrendingService
+        let testObj: TrendingListViewModel
 
-        fakeService.errorToThrow = DummyError()
+        init() {
+            fakeService = FakeTrendingService()
+            testObj = TrendingListViewModel(service: fakeService)
+        }
 
-        await testObj.refresh()
+        @Test func refreshShouldChangeCurrentState() async {
+            fakeService.actionBeforeReturn = { @MainActor in
+                #expect(testObj.currentState == .loading)
+            }
 
-        #expect(testObj.currentState == .error)
+            #expect(testObj.currentState == .idle)
+            await testObj.refresh()
+
+            #expect(testObj.currentState == .idle)
+        }
+
+        @Test func refreshShouldSetErrorStateInCaseOfError() async {
+            fakeService.errorToThrow = DummyError()
+
+            await testObj.refresh()
+
+            #expect(testObj.currentState == .error)
+        }
+
+        @Test func refreshShoudlReturnToIdleWhenCancelled() async {
+            fakeService.errorToThrow = CancellationError()
+
+            await testObj.refresh()
+
+            #expect(testObj.currentState == .idle)
+        }
     }
 
-    @Test func refreshShoudlReturnToIdleWhenCancelled() async {
-        let fakeService = FakeTrendingService()
-        let testObj = TrendingListViewModel(service: fakeService)
-
-        fakeService.errorToThrow = CancellationError()
-
-        await testObj.refresh()
-
-        #expect(testObj.currentState == .idle)
-    }
 }

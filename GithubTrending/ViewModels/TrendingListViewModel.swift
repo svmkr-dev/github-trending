@@ -19,6 +19,8 @@ class TrendingListViewModel {
     private(set) var repositories: [TrendingRepoEntry] = []
     private(set) var currentState = State.idle
 
+    var dateRange: DateRange = .today
+
     init(service: any TrendingReposServiceProtocol) {
         self.service = service
     }
@@ -26,14 +28,12 @@ class TrendingListViewModel {
     func refresh() async {
         do {
             currentState = .loading
-            repositories = try await service.getTrendingRepos(dateRange: .today)
+            repositories = try await service.getTrendingRepos(dateRange: dateRange)
+            currentState = .idle
+        } catch is CancellationError {
             currentState = .idle
         } catch {
-            if error is CancellationError {
-                currentState = .idle
-            } else {
-                currentState = .error
-            }
+            currentState = .error
         }
     }
 }

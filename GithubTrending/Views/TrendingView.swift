@@ -39,6 +39,7 @@ struct TrendingListView: View {
 
 struct TrendingView: View {
     @Bindable private var model: TrendingViewModel
+    @State private var colorScheme: ColorScheme?
 
     var body: some View {
         TrendingListView(model: model)
@@ -65,6 +66,20 @@ struct TrendingView: View {
                 }
             }
 
+            // Embedding Picker in menu to show ellipsis on toolbar
+            // instead of current selection
+            Menu("\(Image(systemName: "ellipsis.circle"))") {
+                Menu("Color scheme") {
+                    Picker(
+                        "\(Image(systemName: "ellipsis.circle"))",
+                        selection: $colorScheme
+                    ) {
+                        Text("Automatic").tag(Optional<ColorScheme>.none)
+                        Text("Light").tag(ColorScheme.light)
+                        Text("Dark").tag(ColorScheme.dark)
+                    }
+                }
+            }
         }
     }
 

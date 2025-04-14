@@ -1,4 +1,4 @@
-////  TrendingListViewModelTests.swift
+////  TrendingViewModelTests.swift
 //  GithubTrending
 //
 //  Created on 12.04.2025.
@@ -12,12 +12,12 @@ import Testing
 struct DummyError: Error {}
 
 @MainActor
-struct TrendingListViewModelTests {
+struct TrendingViewModelTests {
 
     @MainActor
     struct UsingDummyClient {
         let service: TrendingReposService
-        let testObj: TrendingListViewModel
+        let testObj: TrendingViewModel
 
         init() {
             let dummyClient = DummyTrendingClient()
@@ -26,7 +26,7 @@ struct TrendingListViewModelTests {
                 trendingClient: dummyClient,
                 parser: parser
             )
-            testObj = TrendingListViewModel(service: service)
+            testObj = TrendingViewModel(service: service)
         }
 
         @Test func refreshShouldChangeCurrentRepositories() async {
@@ -55,11 +55,11 @@ struct TrendingListViewModelTests {
     @MainActor
     struct UsingFakeService {
         let fakeService: FakeTrendingService
-        let testObj: TrendingListViewModel
+        let testObj: TrendingViewModel
 
         init() {
             fakeService = FakeTrendingService()
-            testObj = TrendingListViewModel(service: fakeService)
+            testObj = TrendingViewModel(service: fakeService)
         }
 
         @Test func refreshShouldChangeCurrentState() async {

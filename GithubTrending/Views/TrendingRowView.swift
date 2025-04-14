@@ -59,6 +59,10 @@ struct TrendingRowView: View {
                 ExpandedRowView(model: model)
             }
         }
+        .padding()
+        .background(.listRowBackground)
+        .cornerRadius(8)
+        .contentShape(Rectangle())
     }
 
     init(model: TrendingRepoEntry, isExpanded: Bool) {

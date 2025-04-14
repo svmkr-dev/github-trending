@@ -46,6 +46,9 @@ struct TrendingView: View {
             .refreshable {
                 await model.refresh()
             }
+            .onAppear {
+                refreshAction()
+            }
             .toolbar(content: toolbar)
             .overlay {
                 if model.currentState == .error {

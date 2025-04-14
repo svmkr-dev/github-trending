@@ -30,6 +30,23 @@ struct TrendingListView: View {
         .background(.listBackground)
         .navigationTitle("Trending")
         .animation(.bouncy(duration: 0.3), value: expanded)
+        .overlay {
+            if model.currentState == .error {
+                ContentUnavailableView {
+                    Label("Error retrieving repositories", systemImage: "x.circle.fill")
+                } description: {
+                    Text("Please try again")
+                        .multilineTextAlignment(.center)
+                } actions: {
+                    Button(
+                        "Refresh",
+                        action: { Task { await model.refresh() } }
+                    )
+                        .padding()
+                        .buttonStyle(.bordered)
+                }
+            }
+        }
     }
 
     init(model: TrendingViewModel) {
@@ -43,26 +60,12 @@ struct TrendingView: View {
 
     var body: some View {
         TrendingListView(model: model)
+            .toolbar(content: toolbar)
             .refreshable {
                 await model.refresh()
             }
             .onAppear {
                 refreshAction()
-            }
-            .toolbar(content: toolbar)
-            .overlay {
-                if model.currentState == .error {
-                    ContentUnavailableView {
-                        Label("Error retrieving repositories", systemImage: "x.circle.fill")
-                    } description: {
-                        Text("Please try again")
-                            .multilineTextAlignment(.center)
-                    } actions: {
-                        Button("Refresh", action: refreshAction)
-                            .padding()
-                            .buttonStyle(.bordered)
-                    }
-                }
             }
             .preferredColorScheme(colorScheme)
     }

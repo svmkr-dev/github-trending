@@ -9,9 +9,8 @@
 import SwiftUI
 
 struct TrendingListView: View {
-    private let model: TrendingListViewModel
+    @Bindable private var model: TrendingListViewModel
     @State private var expanded: Set<TrendingRepoEntry.ID> = Set()
-    @State private var range: DateRange = .today
 
     var body: some View {
         ScrollView {
@@ -40,11 +39,13 @@ struct TrendingListView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {
-                Picker(range.rawValue, selection: $range) {
+                let pickerTitle = stringFor(range: model.dateRange)
+
+                Picker(pickerTitle, selection: $model.dateRange) {
                     ForEach(DateRange.allCases) { range in
-                        Text(range.rawValue)
+                        Text(stringFor(range: range))
                     }
-                    .onChange(of: range) {
+                    .onChange(of: model.dateRange) {
                         Task { await model.refresh() }
                     }
                 }
@@ -54,6 +55,14 @@ struct TrendingListView: View {
 
     init(model: TrendingListViewModel) {
         self.model = model
+    }
+
+    private func stringFor(range: DateRange) -> String {
+        switch range {
+        case .today: "Today"
+        case .week: "This week"
+        case .month: "This month"
+        }
     }
 }
 

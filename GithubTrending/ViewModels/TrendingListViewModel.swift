@@ -26,7 +26,7 @@ class TrendingListViewModel {
     func refresh() async {
         do {
             currentState = .loading
-            repositories = try await service.getTrendingRepos()
+            repositories = try await service.getTrendingRepos(dateRange: .today)
             currentState = .idle
         } catch {
             if error is CancellationError {

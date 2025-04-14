@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F21CF0372DAC3FE500A6719D /* monthly.html in Resources */ = {isa = PBXBuildFile; fileRef = F21CF0352DAC3FE500A6719D /* monthly.html */; };
+		F21CF0382DAC3FE500A6719D /* weekly.html in Resources */ = {isa = PBXBuildFile; fileRef = F21CF0362DAC3FE500A6719D /* weekly.html */; };
+		F21CF03B2DACFC6900A6719D /* FakeTrendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CF03A2DACFC6400A6719D /* FakeTrendingService.swift */; };
+		F21CF03D2DAD0B7500A6719D /* FakeTrendingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CF03C2DAD0B7200A6719D /* FakeTrendingClient.swift */; };
+		F21CF03F2DAD0C2800A6719D /* FakeTrendingParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CF03E2DAD0C2400A6719D /* FakeTrendingParser.swift */; };
+		F21CF0422DAD0C5A00A6719D /* TrendingParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CF0412DAD0C5500A6719D /* TrendingParser.swift */; };
 		F24541B82DAA6F630006CF32 /* TrendingReposService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541B72DAA6F5B0006CF32 /* TrendingReposService.swift */; };
 		F24541BA2DAA6F7A0006CF32 /* TrendingReposServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541B92DAA6F730006CF32 /* TrendingReposServiceTests.swift */; };
 		F24541BC2DAAEFF10006CF32 /* TrendingRepoEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */; };
@@ -51,6 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F21CF0352DAC3FE500A6719D /* monthly.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = monthly.html; sourceTree = "<group>"; };
+		F21CF0362DAC3FE500A6719D /* weekly.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = weekly.html; sourceTree = "<group>"; };
+		F21CF03A2DACFC6400A6719D /* FakeTrendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTrendingService.swift; sourceTree = "<group>"; };
+		F21CF03C2DAD0B7200A6719D /* FakeTrendingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTrendingClient.swift; sourceTree = "<group>"; };
+		F21CF03E2DAD0C2400A6719D /* FakeTrendingParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTrendingParser.swift; sourceTree = "<group>"; };
+		F21CF0412DAD0C5500A6719D /* TrendingParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingParser.swift; sourceTree = "<group>"; };
 		F24541B72DAA6F5B0006CF32 /* TrendingReposService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposService.swift; sourceTree = "<group>"; };
 		F24541B92DAA6F730006CF32 /* TrendingReposServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposServiceTests.swift; sourceTree = "<group>"; };
 		F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepoEntry.swift; sourceTree = "<group>"; };
@@ -108,6 +120,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F21CF0392DACFC5D00A6719D /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				F21CF03E2DAD0C2400A6719D /* FakeTrendingParser.swift */,
+				F21CF03C2DAD0B7200A6719D /* FakeTrendingClient.swift */,
+				F21CF03A2DACFC6400A6719D /* FakeTrendingService.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		F21CF0402DAD0C4E00A6719D /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F21CF0412DAD0C5500A6719D /* TrendingParser.swift */,
+				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		F24541BF2DAAF98C0006CF32 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +221,8 @@
 		F2E48B7F2DA45C9F0072EF41 /* DevelopmentAssets */ = {
 			isa = PBXGroup;
 			children = (
+				F21CF0352DAC3FE500A6719D /* monthly.html */,
+				F21CF0362DAC3FE500A6719D /* weekly.html */,
 				F2E48B802DA45CBB0072EF41 /* trending.html */,
 			);
 			path = DevelopmentAssets;
@@ -198,6 +231,7 @@
 		F2E48B872DA546F00072EF41 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				F21CF0392DACFC5D00A6719D /* TestDoubles */,
 				F2E48B972DA949910072EF41 /* SwiftTestingTags.swift */,
 				F2E48B882DA546FE0072EF41 /* SampleTrendingRepos.swift */,
 			);
@@ -216,8 +250,8 @@
 		F2E48B912DA938830072EF41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F21CF0402DAD0C4E00A6719D /* Parser */,
 				F2E48B9E2DA955490072EF41 /* Clients */,
-				F2E48B852DA5253E0072EF41 /* SwiftSoupTrendingParser.swift */,
 				F24541BB2DAAEFEE0006CF32 /* TrendingRepoEntry.swift */,
 				F24541B72DAA6F5B0006CF32 /* TrendingReposService.swift */,
 			);
@@ -371,6 +405,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */,
+				F21CF0372DAC3FE500A6719D /* monthly.html in Resources */,
+				F21CF0382DAC3FE500A6719D /* weekly.html in Resources */,
 				F24541BD2DAAF1620006CF32 /* trending.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +440,7 @@
 				F2E48B9D2DA954960072EF41 /* DummyTrendingClient.swift in Sources */,
 				F2E48B862DA525450072EF41 /* SwiftSoupTrendingParser.swift in Sources */,
 				F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */,
+				F21CF0422DAD0C5A00A6719D /* TrendingParser.swift in Sources */,
 				F24541B82DAA6F630006CF32 /* TrendingReposService.swift in Sources */,
 				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
 				F24541BC2DAAEFF10006CF32 /* TrendingRepoEntry.swift in Sources */,
@@ -419,9 +456,12 @@
 				F24541C42DAB00B40006CF32 /* TrendingListViewModelTests.swift in Sources */,
 				F2E48B892DA547040072EF41 /* SampleTrendingRepos.swift in Sources */,
 				F24541BA2DAA6F7A0006CF32 /* TrendingReposServiceTests.swift in Sources */,
+				F21CF03D2DAD0B7500A6719D /* FakeTrendingClient.swift in Sources */,
 				F2E48B962DA943450072EF41 /* GithubTrendingClientTests.swift in Sources */,
+				F21CF03F2DAD0C2800A6719D /* FakeTrendingParser.swift in Sources */,
 				F2E48B792DA434550072EF41 /* SwiftSoupTrendingParserTests.swift in Sources */,
 				F2E48B982DA949940072EF41 /* SwiftTestingTags.swift in Sources */,
+				F21CF03B2DACFC6900A6719D /* FakeTrendingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,8 +621,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = DevelopmentAssets/trending.html;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = DevelopmentAssets;
+				DEVELOPMENT_TEAM = Y6SLU4Y7M6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -614,8 +654,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = DevelopmentAssets/trending.html;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = DevelopmentAssets;
+				DEVELOPMENT_TEAM = Y6SLU4Y7M6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

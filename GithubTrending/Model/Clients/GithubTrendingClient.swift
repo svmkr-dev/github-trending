@@ -31,7 +31,9 @@ struct GithubTrendingClient: TrendingClient {
             throw RequestConstructionError()
         }
 
-        urlComponents.queryItems = [URLQueryItem(name: "since", value: dateRange.rawValue)]
+        urlComponents.queryItems = [
+            URLQueryItem(name: "since", value: queryValue(for: dateRange))
+        ]
 
         guard let url = urlComponents.url else {
             throw RequestConstructionError()
@@ -43,6 +45,14 @@ struct GithubTrendingClient: TrendingClient {
         request.setValue("text/html", forHTTPHeaderField: "Accept")
 
         return request
+    }
+
+    private func queryValue(for dateRange: DateRange) -> String {
+        switch dateRange {
+        case .today: "daily"
+        case .week: "weekly"
+        case .month: "monthly"
+        }
     }
 }
 

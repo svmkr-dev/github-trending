@@ -9,24 +9,6 @@ import Observation
 import Testing
 @testable import GithubTrending
 
-@MainActor
-class FakeTrendingService: TrendingReposServiceProtocol {
-    var actionBeforeReturn: (@MainActor @Sendable () -> ())?
-    var errorToThrow: (any Error)?
-
-    func getTrendingRepos() async throws -> [TrendingRepoEntry] {
-        if let actionBeforeReturn {
-            actionBeforeReturn()
-        }
-
-        if let errorToThrow {
-            throw errorToThrow
-        }
-
-        return sampleTrending
-    }
-}
-
 struct DummyError: Error {}
 
 @MainActor

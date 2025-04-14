@@ -7,7 +7,7 @@
 
 import SwiftSoup
 
-struct SwiftSoupTrendingParser {
+struct SwiftSoupTrendingParser: TrendingParser {
     private static let expectedStatsSpansCount = 3
     private static let expectedStatsLinksCount = 2
 

@@ -9,17 +9,28 @@ import Testing
 @testable import GithubTrending
 
 struct TrendingReposServiceTests {
-    @Test func getTrendingReposShouldReturnExpectedRepos() async throws {
-        let client = DummyTrendingClient()
-        let parser = SwiftSoupTrendingParser()
+    @Test("Should return entries for appropriate date range",
+          arguments: DateRange.allCases)
+    func getTrendingReposShouldReturnExpectedRepos(dateRange: DateRange) async throws {
+        let client = FakeTrendingClient()
+        let parser = FakeTrendingParser()
         let testObj = TrendingReposService(
             trendingClient: client,
             parser: parser
         )
 
-        let results = try await testObj.getTrendingRepos()
+        let results = try await testObj.getTrendingRepos(dateRange: dateRange)
 
-        #expect(results == sampleTrending)
+        #expect(results == expectedValue(for: dateRange))
     }
+
+    private func expectedValue(for dateRange: DateRange) -> [TrendingRepoEntry] {
+        switch dateRange {
+        case .today: sampleTrending
+        case .week: FakeTrendingParser.weeklyEntries
+        case .month: FakeTrendingParser.monthlyEntries
+        }
+    }
+
 }
 

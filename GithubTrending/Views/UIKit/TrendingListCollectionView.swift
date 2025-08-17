@@ -47,6 +47,7 @@ class TrendingListCollectionView: UICollectionViewController {
         }
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addAction(refreshAction, for: .valueChanged)
+        collectionView.selfSizingInvalidation = .enabledIncludingConstraints
     }
 
     override func updateProperties() {

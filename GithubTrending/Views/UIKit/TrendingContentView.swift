@@ -41,6 +41,7 @@ struct TrendingContentConfiguration: UIContentConfiguration {
     }
 }
 
+@Observable
 class TrendingContentView: UIView, UIContentView {
     var configuration: any UIContentConfiguration
 

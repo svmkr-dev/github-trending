@@ -5,7 +5,7 @@
 //  
 //
 
-struct TrendingRepoEntry: Equatable {
+struct TrendingRepoEntry: Equatable, Hashable {
     let fullname: String
     let description: String
     let lang: String

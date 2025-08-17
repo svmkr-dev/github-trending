@@ -14,9 +14,7 @@ struct GithubTrendingApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                TrendingView(model: viewModel)
-            }
+            MainView(model: viewModel)
         }
     }
 

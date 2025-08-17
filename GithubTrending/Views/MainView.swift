@@ -1,73 +1,34 @@
-////  TrendingView.swift
+////  MainView.swift
 //  GithubTrending
 //
-//  Created on 07.04.2025.
+//  Created on 17.08.2025.
 //  
 //
 
-
 import SwiftUI
 
-struct TrendingListView: View {
-    private let model: TrendingViewModel
-    @State private var expanded: Set<TrendingRepoEntry.ID> = Set()
-
-    var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(model.repositories) { rowModel in
-                    TrendingRowView(model: rowModel, isExpanded: expanded.contains(rowModel.id))
-                        .onTapGesture {
-                            let (added, _) = expanded.insert(rowModel.id)
-                            if !added {
-                                expanded.remove(rowModel.id)
-                            }
-                        }
-                }
-            }
-        }
-        .padding()
-        .background(.listBackground)
-        .navigationTitle("Trending")
-        .animation(.bouncy(duration: 0.3), value: expanded)
-        .overlay {
-            if model.currentState == .error {
-                ContentUnavailableView {
-                    Label("Error retrieving repositories", systemImage: "x.circle.fill")
-                } description: {
-                    Text("Please try again")
-                        .multilineTextAlignment(.center)
-                } actions: {
-                    Button(
-                        "Refresh",
-                        action: { Task { await model.refresh() } }
-                    )
-                        .padding()
-                        .buttonStyle(.bordered)
-                }
-            }
-        }
-    }
-
-    init(model: TrendingViewModel) {
-        self.model = model
-    }
-}
-
-struct TrendingView: View {
+struct MainView: View {
     @Bindable private var model: TrendingViewModel
     @State private var colorScheme: ColorScheme?
 
     var body: some View {
-        TrendingListView(model: model)
+        NavigationStack {
+            TabView {
+                TrendingListView(model: model)
+                    .tabItem {
+                        Image(systemName: "swift")
+                        Text("SwiftUI")
+                    }
+
+                TrendingCollectionView(model: model)
+                    .tabItem {
+                        Text("UIKit")
+                    }
+            }
             .toolbar(content: toolbar)
-            .refreshable {
-                await model.refresh()
-            }
-            .onAppear {
-                refreshAction()
-            }
             .preferredColorScheme(colorScheme)
+            .navigationTitle("Trending")
+        }
     }
 
     init(model: TrendingViewModel) {
@@ -126,9 +87,7 @@ struct TrendingView: View {
     )
 
     let viewModel = TrendingViewModel(service: service)
-    NavigationStack {
-        TrendingView(model: viewModel)
-    }
+    MainView(model: viewModel)
 }
 
 fileprivate struct ThrowingService: TrendingReposServiceProtocol {
@@ -143,7 +102,5 @@ fileprivate struct ThrowingService: TrendingReposServiceProtocol {
     let service = ThrowingService()
     let viewModel = TrendingViewModel(service: service)
 
-    NavigationStack {
-        TrendingView(model: viewModel)
-    }
+    MainView(model: viewModel)
 }

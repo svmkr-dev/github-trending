@@ -94,5 +94,4 @@ struct TrendingRowView: View {
         TrendingRowView(model: row, isExpanded: true)
         TrendingRowView(model: secondRow, isExpanded: true)
     }
-    .padding()
 }

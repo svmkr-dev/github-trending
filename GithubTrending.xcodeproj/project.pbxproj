@@ -20,8 +20,9 @@
 		F24541C12DAAF9A50006CF32 /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541C02DAAF9A20006CF32 /* TrendingViewModel.swift */; };
 		F24541C42DAB00B40006CF32 /* TrendingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541C32DAB00AF0006CF32 /* TrendingViewModelTests.swift */; };
 		F24541C62DABE7C50006CF32 /* TrendingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24541C52DABE7C00006CF32 /* TrendingRowView.swift */; };
+		F2AC802B2E52372B00298411 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC802A2E52372400298411 /* MainView.swift */; };
 		F2E48B742DA4344A0072EF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E48B702DA4344A0072EF41 /* Assets.xcassets */; };
-		F2E48B752DA4344A0072EF41 /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* TrendingView.swift */; };
+		F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B712DA4344A0072EF41 /* TrendingListView.swift */; };
 		F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */; };
 		F2E48B792DA434550072EF41 /* SwiftSoupTrendingParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B772DA434550072EF41 /* SwiftSoupTrendingParserTests.swift */; };
 		F2E48B842DA462010072EF41 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F2E48B832DA462010072EF41 /* SwiftSoup */; };
@@ -33,6 +34,8 @@
 		F2E48B9B2DA954610072EF41 /* TrendingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B9A2DA954560072EF41 /* TrendingClient.swift */; };
 		F2E48B9D2DA954960072EF41 /* DummyTrendingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B9C2DA9548F0072EF41 /* DummyTrendingClient.swift */; };
 		F2E48BA02DA956B90072EF41 /* ClientErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E48B9F2DA956B60072EF41 /* ClientErrors.swift */; };
+		F2E6165E2E4B626B0079ECEA /* TrendingListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6165D2E4B62620079ECEA /* TrendingListCollectionView.swift */; };
+		F2E616602E4B6C290079ECEA /* TrendingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6165F2E4B6C220079ECEA /* TrendingContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +62,13 @@
 		F24541C32DAB00AF0006CF32 /* TrendingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModelTests.swift; sourceTree = "<group>"; };
 		F24541C52DABE7C00006CF32 /* TrendingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRowView.swift; sourceTree = "<group>"; };
 		F24541C82DAC1DDF0006CF32 /* NetworkingTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetworkingTests.xctestplan; sourceTree = "<group>"; };
+		F2AC802A2E52372400298411 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F2AC802F2E52437A00298411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2E48B442DA3E6A10072EF41 /* GithubTrending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubTrending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B512DA3E6A20072EF41 /* GithubTrendingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubTrendingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E48B6F2DA3E9C80072EF41 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
 		F2E48B702DA4344A0072EF41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F2E48B712DA4344A0072EF41 /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
+		F2E48B712DA4344A0072EF41 /* TrendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListView.swift; sourceTree = "<group>"; };
 		F2E48B722DA4344A0072EF41 /* GithubTrendingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendingApp.swift; sourceTree = "<group>"; };
 		F2E48B772DA434550072EF41 /* SwiftSoupTrendingParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupTrendingParserTests.swift; sourceTree = "<group>"; };
 		F2E48B802DA45CBB0072EF41 /* trending.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = trending.html; sourceTree = "<group>"; };
@@ -76,6 +81,8 @@
 		F2E48B9A2DA954560072EF41 /* TrendingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingClient.swift; sourceTree = "<group>"; };
 		F2E48B9C2DA9548F0072EF41 /* DummyTrendingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTrendingClient.swift; sourceTree = "<group>"; };
 		F2E48B9F2DA956B60072EF41 /* ClientErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientErrors.swift; sourceTree = "<group>"; };
+		F2E6165D2E4B62620079ECEA /* TrendingListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListCollectionView.swift; sourceTree = "<group>"; };
+		F2E6165F2E4B6C220079ECEA /* TrendingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +139,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		F2AC802E2E52406A00298411 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F2E6165F2E4B6C220079ECEA /* TrendingContentView.swift */,
+				F2E6165D2E4B62620079ECEA /* TrendingListCollectionView.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		F2E48B3B2DA3E6A10072EF41 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +179,7 @@
 		F2E48B732DA4344A0072EF41 /* GithubTrending */ = {
 			isa = PBXGroup;
 			children = (
+				F2AC802F2E52437A00298411 /* Info.plist */,
 				F2E48B912DA938830072EF41 /* Model */,
 				F2E48B902DA9387A0072EF41 /* Views */,
 				F24541BF2DAAF98C0006CF32 /* ViewModels */,
@@ -207,8 +224,10 @@
 		F2E48B902DA9387A0072EF41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F2AC802E2E52406A00298411 /* UIKit */,
+				F2AC802A2E52372400298411 /* MainView.swift */,
 				F24541C52DABE7C00006CF32 /* TrendingRowView.swift */,
-				F2E48B712DA4344A0072EF41 /* TrendingView.swift */,
+				F2E48B712DA4344A0072EF41 /* TrendingListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,7 +323,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1630;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					F2E48B432DA3E6A10072EF41 = {
 						CreatedOnToolsVersion = 16.3;
@@ -370,11 +389,14 @@
 				F2E48B942DA9395C0072EF41 /* GithubTrendingClient.swift in Sources */,
 				F2E48B9D2DA954960072EF41 /* DummyTrendingClient.swift in Sources */,
 				F2E48B862DA525450072EF41 /* SwiftSoupTrendingParser.swift in Sources */,
-				F2E48B752DA4344A0072EF41 /* TrendingView.swift in Sources */,
+				F2E48B752DA4344A0072EF41 /* TrendingListView.swift in Sources */,
+				F2E616602E4B6C290079ECEA /* TrendingContentView.swift in Sources */,
 				F21CF0422DAD0C5A00A6719D /* TrendingParser.swift in Sources */,
 				F24541B82DAA6F630006CF32 /* TrendingReposService.swift in Sources */,
 				F2E48B762DA4344A0072EF41 /* GithubTrendingApp.swift in Sources */,
+				F2E6165E2E4B626B0079ECEA /* TrendingListCollectionView.swift in Sources */,
 				F24541BC2DAAEFF10006CF32 /* TrendingRepoEntry.swift in Sources */,
+				F2AC802B2E52372B00298411 /* MainView.swift in Sources */,
 				F24541C12DAAF9A50006CF32 /* TrendingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +488,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -524,6 +547,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -541,6 +565,7 @@
 				DEVELOPMENT_TEAM = Y6SLU4Y7M6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GithubTrending/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -574,6 +599,7 @@
 				DEVELOPMENT_TEAM = Y6SLU4Y7M6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GithubTrending/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

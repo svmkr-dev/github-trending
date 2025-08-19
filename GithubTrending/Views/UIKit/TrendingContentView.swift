@@ -68,23 +68,27 @@ class TrendingContentView: UIView, UIContentView {
         fullnameLabel.lineBreakMode = .byWordWrapping
         fullnameLabel.numberOfLines = 0
 
-        let star = UIImageView(image: UIImage(systemName: "star"))
-        star.contentMode = .scaleAspectFit
-        star.tintColor = .black
+        let star = UIImage(systemName: "star")!
+        let starSymbol = NSAttributedString(
+            attachment: NSTextAttachment(image: star)
+        )
+        let starLabel = UILabel()
+        starLabel.attributedText = starSymbol
+        starLabel.textAlignment = .center
 
         starsSinceLabel.font = .preferredFont(forTextStyle: .caption1)
 
         let starsStack = UIStackView(arrangedSubviews: [
-            star,
+            starLabel,
             starsSinceLabel
         ])
         starsStack.axis = .vertical
         starsStack.spacing = 8
+
         starsStack.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-        fullnameLabel.setContentCompressionResistancePriority(
-            starsStack.contentCompressionResistancePriority(for: .horizontal) - 1,
-            for: .horizontal
-        )
+        fullnameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        starsStack.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        fullnameLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
 
         let upperStack = UIStackView(arrangedSubviews: [
             fullnameLabel,
@@ -92,6 +96,8 @@ class TrendingContentView: UIView, UIContentView {
         ])
         upperStack.axis = .horizontal
         upperStack.distribution = .fill
+        upperStack.alignment = .center
+        upperStack.spacing = 8
 
         descriptionLabel.lineBreakMode = .byWordWrapping
         descriptionLabel.numberOfLines = 0
@@ -131,7 +137,7 @@ class TrendingContentView: UIView, UIContentView {
             mainStack.leadingAnchor.constraint(equalTo: leadingAnchor),
             mainStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainStack.topAnchor.constraint(equalTo: topAnchor),
-            mainStack.bottomAnchor.constraint(equalTo: bottomAnchor)
+            mainStack.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 
@@ -149,7 +155,7 @@ class TrendingContentView: UIView, UIContentView {
 
         let starsText = NSMutableAttributedString(string: " \(configuration.stars) stars")
         let starImage = UIImage(systemName: "star")!
-        let starSymbol = NSMutableAttributedString(
+        let starSymbol = NSAttributedString(
             attachment: NSTextAttachment(image: starImage)
         )
         starsText.insert(starSymbol, at: 0)

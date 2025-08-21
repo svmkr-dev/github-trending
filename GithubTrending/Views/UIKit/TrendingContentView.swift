@@ -32,12 +32,7 @@ struct TrendingContentConfiguration: UIContentConfiguration {
     }
     
     func updated(for state: any UIConfigurationState) -> TrendingContentConfiguration {
-        guard let cellState = state as? UICellConfigurationState,
-              cellState.isSelected else { return self }
-        var updatedSelf = self
-        updatedSelf.isExpanded.toggle()
-        print("Updated self \(fullname) isExpanded: \(updatedSelf.isExpanded)")
-        return updatedSelf
+        return self
     }
 }
 
@@ -180,7 +175,8 @@ class TrendingContentView: UIView, UIContentView {
         lang: "Python",
         stars: "5,444",
         forks: "666",
-        starsSinceText: "49 stars today"
+        starsSinceText: "49 stars today",
+        isExpanded: true
     )
     let secondRow = TrendingContentConfiguration(
         fullname: "Lorem/Ipsum",
@@ -189,15 +185,32 @@ class TrendingContentView: UIView, UIContentView {
         stars: "5,444",
         forks: "666",
         starsSinceText: "49 stars today",
-        isExpanded: true
+        isExpanded: false
     )
-    var state = UICellConfigurationState(traitCollection: UITraitCollection())
-    state.isSelected = true
+    let rowView = row.makeContentView()
+    let toggleAction = UIAction(title: "Toggle expand") { _ in
+        guard let row = rowView.configuration as? TrendingContentConfiguration else { return }
+        var isExpanded = row.isExpanded
+        isExpanded.toggle()
+        let newConfiguration = TrendingContentConfiguration(
+            fullname: row.fullname,
+            description: row.description,
+            lang: row.lang,
+            stars: row.stars,
+            forks: row.forks,
+            starsSinceText: row.starsSinceText,
+            isExpanded: isExpanded
+        )
+        rowView.configuration = newConfiguration
+        print("expanded: \(isExpanded)")
+    }
+    let button = UIButton(frame: .zero, primaryAction: toggleAction)
+    button.setTitleColor(.black, for: .normal)
 
     let stack = UIStackView(arrangedSubviews: [
-        row.makeContentView(),
-        row.updated(for: state).makeContentView(),
-        secondRow.makeContentView()
+        rowView,
+        secondRow.makeContentView(),
+        button,
     ])
     stack.axis = .vertical
     return stack

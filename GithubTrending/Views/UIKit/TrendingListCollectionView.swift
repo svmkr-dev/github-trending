@@ -24,7 +24,8 @@ struct TrendingCollectionView: UIViewControllerRepresentable {
 class TrendingListCollectionView: UICollectionViewController {
     private let model: TrendingViewModel
     private let cellRegistration: UICollectionView.CellRegistration<UICollectionViewCell, TrendingContentConfiguration>
-    private var dataSource: UICollectionViewDiffableDataSource<Int, TrendingRepoEntry>?
+    private var dataSource: UICollectionViewDiffableDataSource<Int, TrendingRepoEntry.ID>?
+    private var expandedCells: Set<TrendingRepoEntry.ID> = []
 
     required init?(coder: NSCoder) {
         return nil
@@ -51,26 +52,29 @@ class TrendingListCollectionView: UICollectionViewController {
     }
 
     override func updateProperties() {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, TrendingRepoEntry>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, TrendingRepoEntry.ID>()
         snapshot.appendSections([0])
-        snapshot.appendItems(model.repositories)
+        snapshot.appendItems(model.repositories.map(\.id))
         Task { await dataSource?.apply(snapshot) }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = UICollectionViewDiffableDataSource<Int, TrendingRepoEntry>(collectionView: collectionView) {
+        dataSource = UICollectionViewDiffableDataSource<Int, TrendingRepoEntry.ID>(collectionView: collectionView) {
             [weak self]
-            (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: TrendingRepoEntry) -> UICollectionViewCell? in
-            guard let self else { return nil }
-            let entry = model.repositories[indexPath.row]
+            (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: TrendingRepoEntry.ID) -> UICollectionViewCell? in
+            guard let self,
+                  let entry = self.model.repositories.first(where: { $0.id == itemIdentifier })
+            else { return nil }
+
             let configuration = TrendingContentConfiguration(
                 fullname: entry.fullname,
                 description: entry.description,
                 lang: entry.lang,
                 stars: entry.stars,
                 forks: entry.forks,
-                starsSinceText: entry.starsSinceText
+                starsSinceText: entry.starsSinceText,
+                isExpanded: expandedCells.contains(itemIdentifier)
             )
 
             return collectionView.dequeueConfiguredReusableCell(
@@ -83,6 +87,21 @@ class TrendingListCollectionView: UICollectionViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         Task { await refresh() }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, performPrimaryActionForItemAt indexPath: IndexPath) {
+        guard let dataSource,
+            let itemIdentifier = dataSource.itemIdentifier(for: indexPath)
+        else { return }
+
+        let (added, _) = expandedCells.insert(itemIdentifier)
+        if !added {
+            expandedCells.remove(itemIdentifier)
+        }
+
+        var snapshot = dataSource.snapshot()
+        snapshot.reconfigureItems([itemIdentifier])
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 
     private func refresh() async {

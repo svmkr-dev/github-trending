@@ -34,13 +34,33 @@ class TrendingListCollectionView: UICollectionViewController {
     init(model: TrendingViewModel) {
         self.model = model
 
+        var backgroundConfiguration = UIBackgroundConfiguration.clear()
+        backgroundConfiguration.backgroundColor = .listRowBackground
+        backgroundConfiguration.cornerRadius = 8
+
         cellRegistration = .init { cell, indexPath, configuration in
             cell.contentConfiguration = configuration
+            cell.backgroundConfiguration = backgroundConfiguration
         }
 
-        let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
-        super.init(collectionViewLayout: layout)
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(200)
+        )
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(200)
+        )
+
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 8
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16)
+
+        let compositionalLayout = UICollectionViewCompositionalLayout(section: section)
+
+        super.init(collectionViewLayout: compositionalLayout)
         title = "Trending"
         let refreshAction = UIAction(title: "Refresh") { [weak self] _ in
             guard let self else { return }
@@ -49,6 +69,7 @@ class TrendingListCollectionView: UICollectionViewController {
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addAction(refreshAction, for: .valueChanged)
         collectionView.selfSizingInvalidation = .enabledIncludingConstraints
+        collectionView.backgroundColor = .listBackground
     }
 
     override func updateProperties() {

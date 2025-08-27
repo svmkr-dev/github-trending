@@ -118,7 +118,7 @@ class TrendingContentView: UIView, UIContentView {
         super.init(frame: .zero)
 
         mainStack.translatesAutoresizingMaskIntoConstraints = false
-        let padding: CGFloat = 12
+        let padding: CGFloat = 16
         mainStack.directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: padding,
             leading: padding,

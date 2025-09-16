@@ -67,6 +67,7 @@ class TrendingListCollectionView: UICollectionViewController {
             Task { await refresh() }
         }
         collectionView.refreshControl = UIRefreshControl()
+        // FIXME: Pull to refresh does not work on iOS < 26 when embedded in SwiftUI view (???)
         collectionView.refreshControl?.addAction(refreshAction, for: .valueChanged)
         collectionView.selfSizingInvalidation = .enabledIncludingConstraints
         collectionView.backgroundColor = .listBackground
@@ -77,6 +78,14 @@ class TrendingListCollectionView: UICollectionViewController {
         snapshot.appendSections([0])
         snapshot.appendItems(model.repositories.map(\.id))
         Task { await dataSource?.apply(snapshot) }
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        if #unavailable(iOS 26.0) {
+            updateProperties()
+        }
     }
 
     override func viewDidLoad() {

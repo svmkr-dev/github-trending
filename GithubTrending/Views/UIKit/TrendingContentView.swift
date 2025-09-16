@@ -166,6 +166,13 @@ class TrendingContentView: UIView, UIContentView {
 
         expandedContentStack.isHidden = !configuration.isExpanded
     }
+
+    override func layoutSubviews() {
+        if #unavailable(iOS 26.0) {
+            updateProperties()
+        }
+        super.layoutSubviews()
+    }
 }
 
 #Preview {

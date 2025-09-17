@@ -157,11 +157,12 @@ class TrendingContentView: UIView, UIContentView {
         starsLabel.attributedText = starsText
 
         let forksText = NSMutableAttributedString(string: " \(configuration.forks) forks")
-        let forksImage = UIImage(systemName: "arrow.trianglehead.branch")!
-        let forksSymbol = NSMutableAttributedString(
-            attachment: NSTextAttachment(image: forksImage)
-        )
-        forksText.insert(forksSymbol, at: 0)
+        if let forksImage = UIImage(systemName: "arrow.trianglehead.branch") {
+            let forksSymbol = NSMutableAttributedString(
+                attachment: NSTextAttachment(image: forksImage)
+            )
+            forksText.insert(forksSymbol, at: 0)
+        }
         forksLabel.attributedText = forksText
 
         expandedContentStack.isHidden = !configuration.isExpanded

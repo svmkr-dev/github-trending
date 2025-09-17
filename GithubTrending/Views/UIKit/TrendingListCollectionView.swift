@@ -5,6 +5,7 @@
 //  
 //
 
+import Combine
 import SwiftUI
 import UIKit
 
@@ -26,6 +27,8 @@ class TrendingListCollectionView: UICollectionViewController {
     private let cellRegistration: UICollectionView.CellRegistration<UICollectionViewCell, TrendingContentConfiguration>
     private var dataSource: UICollectionViewDiffableDataSource<Int, TrendingRepoEntry.ID>?
     private var expandedCells: Set<TrendingRepoEntry.ID> = []
+
+    private var repositoriesCancellation: AnyCancellable? = nil
 
     required init?(coder: NSCoder) {
         return nil
@@ -67,10 +70,16 @@ class TrendingListCollectionView: UICollectionViewController {
             Task { await refresh() }
         }
         collectionView.refreshControl = UIRefreshControl()
-        // FIXME: Pull to refresh does not work on iOS < 26 when embedded in SwiftUI view (???)
         collectionView.refreshControl?.addAction(refreshAction, for: .valueChanged)
         collectionView.selfSizingInvalidation = .enabledIncludingConstraints
         collectionView.backgroundColor = .listBackground
+
+        if #unavailable(iOS 26.0) {
+            repositoriesCancellation = model.repositoriesDidChange.sink { [unowned self] in
+                print("Combine sink: repositories did change")
+                updateProperties()
+            }
+        }
     }
 
     override func updateProperties() {
@@ -78,14 +87,6 @@ class TrendingListCollectionView: UICollectionViewController {
         snapshot.appendSections([0])
         snapshot.appendItems(model.repositories.map(\.id))
         Task { await dataSource?.apply(snapshot) }
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-
-        if #unavailable(iOS 26.0) {
-            updateProperties()
-        }
     }
 
     override func viewDidLoad() {
@@ -131,7 +132,18 @@ class TrendingListCollectionView: UICollectionViewController {
 
         var snapshot = dataSource.snapshot()
         snapshot.reconfigureItems([itemIdentifier])
-        dataSource.apply(snapshot, animatingDifferences: false)
+        if #unavailable(iOS 18.0) {
+            Task {
+                await dataSource.apply(snapshot, animatingDifferences: true)
+            }
+        } else {
+            let animation = if #unavailable(iOS 26.0) {
+                true
+            } else {
+                false
+            }
+            dataSource.apply(snapshot, animatingDifferences: animation)
+        }
     }
 
     private func refresh() async {

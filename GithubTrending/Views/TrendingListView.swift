@@ -28,7 +28,7 @@ fileprivate struct InnerListView: View {
         }
         .padding()
         .background(.listBackground)
-        .navigationTitle("Trending2")
+        .navigationTitle("Trending")
         .animation(.bouncy(duration: 0.3), value: expanded)
         .overlay {
             if model.currentState == .error {

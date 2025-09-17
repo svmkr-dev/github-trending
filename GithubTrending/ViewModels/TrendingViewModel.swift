@@ -6,6 +6,7 @@
 //
 
 import Observation
+import Combine
 
 @MainActor
 @Observable
@@ -29,11 +30,20 @@ class TrendingViewModel {
         do {
             currentState = .loading
             repositories = try await service.getTrendingRepos(dateRange: dateRange)
+            notifyIfNeeded()
             currentState = .idle
         } catch is CancellationError {
             currentState = .idle
         } catch {
             currentState = .error
+        }
+    }
+
+    // -MARK: iOS 18 UIKit support
+    let repositoriesDidChange = PassthroughSubject<Void, Never>()
+    private func notifyIfNeeded() {
+        if #unavailable(iOS 26.0) {
+            repositoriesDidChange.send()
         }
     }
 }

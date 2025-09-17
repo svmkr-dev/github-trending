@@ -38,7 +38,14 @@ struct TrendingContentConfiguration: UIContentConfiguration {
 
 @Observable
 class TrendingContentView: UIView, UIContentView {
-    var configuration: any UIContentConfiguration
+    var configuration: any UIContentConfiguration {
+        didSet {
+            if #unavailable(iOS 26.0) {
+                updateProperties()
+                setNeedsLayout()
+            }
+        }
+    }
 
     private let fullnameLabel = UILabel()
     private let descriptionLabel = UILabel()
@@ -166,13 +173,6 @@ class TrendingContentView: UIView, UIContentView {
         forksLabel.attributedText = forksText
 
         expandedContentStack.isHidden = !configuration.isExpanded
-    }
-
-    override func layoutSubviews() {
-        if #unavailable(iOS 26.0) {
-            updateProperties()
-        }
-        super.layoutSubviews()
     }
 }
 

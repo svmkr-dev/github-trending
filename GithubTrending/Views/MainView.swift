@@ -6,28 +6,31 @@
 //
 
 import SwiftUI
+enum UIBackend {
+    case swiftUi, uiKit
+}
 
 struct MainView: View {
     @Bindable private var model: TrendingViewModel
     @State private var colorScheme: ColorScheme?
+    @State private var uiImplementation = UIBackend.swiftUi
 
     var body: some View {
         NavigationStack {
-            TabView {
-                TrendingListView(model: model)
-                    .tabItem {
-                        Image(systemName: "swift")
-                        Text("SwiftUI")
-                    }
-
-                TrendingCollectionView(model: model)
-                    .tabItem {
-                        Text("UIKit")
-                    }
-            }
+            implementedView
             .toolbar(content: toolbar)
             .preferredColorScheme(colorScheme)
-            .navigationTitle("Trending")
+        }
+    }
+
+    @ViewBuilder var implementedView: some View {
+        switch uiImplementation {
+        case .swiftUi:
+            TrendingListView(model: model)
+        case .uiKit:
+            TrendingCollectionView(model: model)
+                .navigationTitle("Trending")
+                .background(.listBackground)
         }
     }
 
@@ -59,6 +62,12 @@ struct MainView: View {
                         Text("Automatic").tag(Optional<ColorScheme>.none)
                         Text("Light").tag(ColorScheme.light)
                         Text("Dark").tag(ColorScheme.dark)
+                    }
+                }
+                Menu("UI implementation") {
+                    Picker("UI implementation", selection: $uiImplementation) {
+                        Text("SwiftUI").tag(UIBackend.swiftUi)
+                        Text("UIKit").tag(UIBackend.uiKit)
                     }
                 }
             }

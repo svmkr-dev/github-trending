@@ -18,7 +18,7 @@ struct SmallTrendingRowView: View {
             Spacer()
             VStack(spacing: 8) {
                 Image(systemName: "star")
-                Text("\(model.starsSinceText)")
+                Text(model.starsSinceText)
                     .font(.caption)
             }
         }
@@ -61,7 +61,7 @@ struct TrendingRowView: View {
         }
         .padding()
         .background(.listRowBackground)
-        .cornerRadius(8)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
         .contentShape(Rectangle())
     }
 

@@ -11,7 +11,7 @@ import Combine
 @MainActor
 @Observable
 class TrendingViewModel {
-    enum State {
+    enum State: Equatable {
         case idle, loading, error
     }
 

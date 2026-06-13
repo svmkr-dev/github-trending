@@ -61,8 +61,8 @@ struct TrendingListView: View {
             .refreshable {
                 await model.refresh()
             }
-            .onAppear {
-                Task { await model.refresh() }
+            .task {
+                await model.refresh()
             }
     }
 

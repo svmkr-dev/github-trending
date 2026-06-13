@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct GithubTrendingApp: App {
-    @State var viewModel: TrendingViewModel
+    @State private var viewModel: TrendingViewModel
 
     var body: some Scene {
         WindowGroup {

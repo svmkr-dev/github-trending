@@ -46,9 +46,9 @@ struct MainView: View {
                 ForEach(DateRange.allCases) { range in
                     Text(stringFor(range: range))
                 }
-                .onChange(of: model.dateRange) {
-                    Task { await model.refresh() }
-                }
+            }
+            .onChange(of: model.dateRange) {
+                Task { await model.refresh() }
             }
 
             // Embedding Picker in menu to show ellipsis on toolbar
@@ -72,10 +72,6 @@ struct MainView: View {
                 }
             }
         }
-    }
-
-    private func refreshAction() {
-        Task { await model.refresh() }
     }
 
     private func stringFor(range: DateRange) -> String {
